@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/plugin/fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Nest - Multipurpose eCommerce</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-top-wrapper">
+                        <div class="logo-primary">
+                            <img class="icon-logo" src="assets/img/logo.svg" alt="">
+                        </div>
+                        <div class="search">
+                            <form action="">
+                                <div class="search-select">
+                                    <span class="search-categories">All Categories</span>
+                                    <i class="fa-solid fa-chevron-down icon-down"></i>
+                                </div>
+
+                                <input class="search-input" type="search" placeholder="Search for items...">
+                            </form>
+                        </div>
+                        <div class="header-action">
+                            <div class="cart-wrap">
+                                <a href="" class="icon-cart">
+                                    <img src="assets/img/icon-cart.svg" alt="">
+                                    <span class="amount-product">3</span>
+                                </a>
+
+                                <a href="">
+                                    <!-- <span class="cart-title">Cart</span> -->
+                                </a>
+                                <div class="cart-dropdown-wrap">
+                                    <ul class="cart-dropdown-list">
+                                        <li class="cart-dropdown-item">
+                                            <div class="cart-dropdown-img">
+                                                <a href="">
+                                                    <img src="assets/img/cart-thumbnail-3.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <h4 class="cart-dropdown-title">Daisy Casual Bag</h4>
+                                                <p class="cart-dropdown-price">
+                                                    <span>1 ×</span>
+                                                    $800.00
+                                                </p>
+                                            </div>
+                                            <div class="cart-dropdown-delete">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </div>
+                                        </li>
+                                        <li class="cart-dropdown-item">
+                                            <div class="cart-dropdown-img">
+                                                <a href="">
+                                                    <img src="assets/img/cart-thumbnail-2.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <h4 class="cart-dropdown-title">Corduroy Shirts</h4>
+                                                <p class="cart-dropdown-price">
+                                                    <span>1 ×</span>
+                                                    $3200.00
+                                                </p>
+                                            </div>
+                                            <div class="cart-dropdown-delete">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-dropdown-total-wrap">
+                                        <div class="cart-dropdown-total">
+                                            <p>Total</p>
+                                            <span class="cart-dropdown-total-bill">$4000.00</span>
+                                        </div>
+                                        <div class="cart-dropdown-button">
+                                            <a href="#" class="btn button-view">View Cart</a>
+                                            <a href="#" class="btn button-checkout">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" account-wrap js-login">
+                                <img src="assets/img/icon-user.svg" alt="">
+                                <a>
+                                    <!-- <span class="account ">Account</span> -->
+                                </a>
+                            </div>
+                            <!-- <div class="header-action-logged ">
+                                <a href="">MẾN VÕ</a>
+                                <div class="logged-dropdown-wrap modal-dropdow-hover">
+                                    <ul class="logged-dropdown-list">
+                                        <li class="logged-dropdown-item">
+                                            <a href="">
+                                                <i class="fa-solid fa-user"></i>
+                                                <p>My Account</p>
+                                            </a>
+                                        </li>
+                                        <li class="logged-dropdown-item">
+                                            <a href="">
+                                                <i class="fa-solid fa-right-from-bracket icon-logout"></i>
+                                                <p>Log Out</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="header-wrapper-bottom">
+                        <div class="header-nav">
+                            <div class="main-categori">
+                                <div class="categori-button-active js-categori ">
+                                    <i class="fa-solid fa-table-cells-large icon-table-cell"></i>
+                                    <span>Browse</span>
+                                    <div>
+                                        <div>All</div>
+                                        <div>Categories</div>
+                                    </div>
+                                    <div class="icon-down-categori">
+                                        <i class="fa-solid fa-chevron-down js-icon-up icon-down"></i>
+                                    </div>
+                                </div>
+
+                                <div class="categori-modal js-modal-categori">
+                                    <div class="categori-modal-inner">
+                                        <ul>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-1.svg" alt="">
+                                                    <p>Milks and Dairies</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-2.svg" alt="">
+                                                    <p>Clothing & beauty</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-3.svg" alt="">
+                                                    <p> Pet Foods & Toy</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-4.svg" alt="">
+                                                    <p> Baking material</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-5.svg" alt="">
+                                                    <p> Fresh Fruit</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="list-item-right">
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-6.svg" alt="">
+                                                    <p> Wines & Drinks</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-7.svg" alt="">
+                                                    <p> Fresh Seafood</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-8.svg" alt="">
+                                                    <p> Fast food</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-9.svg" alt="">
+                                                    <p> Vegetables</p>
+                                                </a>
+                                            </li>
+                                            <li class="categori-modal-item">
+                                                <a href="">
+                                                    <img src="assets/img/category-10.svg" alt="">
+                                                    <p> Bread and Juice</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nav">
+                                <ul class="nav-list">
+                                    <li class="nav-item hot-deals">
+                                        <i class="fa-solid fa-fire icon-fire"></i>
+                                        <a class="nav-link" href="">Deals</a>
+                                    </li>
+                                    <li class="nav-item color-active">
+                                        <a class="nav-link" href="">
+                                            Home
+                                            <i class="fa-solid fa-chevron-down icon-down color-active"></i>
+                                        </a>
+
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">
+                                            Shop
+                                            <i class="fa-solid fa-chevron-down icon-down"></i>
+                                        </a>
+
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">Vendors</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header-hotline">
+                            <img class="icon-headphones" src="assets/img/icon-headphone.svg" alt="">
+                            <p>
+                                <span class="hotline">1900 - 888</span>
+                                <span class="support-center">24/7 Support Center</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content">
+            <div class="home-slide">
+                <div class="container">
+                    <div class="home-slide-cover">
+                        <img src="assets/img/slider-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular-categories">
+                <div class="container">
+                    <div class="section-title">
+                        <div class="title">
+                            <h3>Featured Categories</h3>
+                            <ul class="list-item">
+                                <li class="item">
+                                    <a class="nav-link" href="">Cake & Milk</a>
+                                </li>
+                                <li class="item">
+                                    <a class="nav-link" href="">Coffes & Teas</a>
+                                </li>
+                                <li class="item color-active">
+                                    <a class=" nav-link " href="">Pet Foods</a>
+                                </li>
+                                <li class="item">
+                                    <a class="nav-link" href="">Vegetables</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slide-arrow">
+                            <span class="slide-arrow-left">
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                            <span class="slide-arrow-right">
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="list-featured-categories">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+    <!-- Modal register & modal login -->
+    <div class="modal js-modal-register">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <!-- Register form -->
+            <div class="auth-form ">
+                <div class="auth-form__container js-modal-container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" placeholder="Email của bạn" class="auth-form__input">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" placeholder="Mật khẩu của bạn" class="auth-form__input">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" placeholder="Nhập lại mật khẩu" class="auth-form__input">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng ký, bạn đã đồng ý với Nest - Multipurpose eCommerce về
+                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__control">
+                        <button class="btn js-modal-close auth-form__control-back btn--normal ">TRỞ LẠI</button>
+                        <button class="btn btn--primary view-cart ">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-modal-login">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            Login form 
+            <div class="auth-form ">
+                <div class="auth-form__container js-modal-container-login">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <span class="auth-form__switch-btn">Đăng ký</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" placeholder="Email của bạn" class="auth-form__input">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" placeholder="Mật khẩu của bạn" class="auth-form__input">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__help">
+                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form__help-separate"></span>
+                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__control">
+                        <button class="btn auth-form__control-back btn--normal js-modal-close-login">TRỞ LẠI</button>
+                        <button class="btn btn--primary view-cart ">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
