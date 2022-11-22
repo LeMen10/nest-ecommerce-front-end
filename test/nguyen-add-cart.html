@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/plugin/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/assets/css/product-description.css">
+    <link rel="stylesheet" href="/assets/css/reponsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .cart {
+            border-radius: 5px;
+            border: 1px solid green;
+            display: none;
+            width: auto;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #aaaaaa;
+            padding: 0 5px;
+            margin: 0 27px;
+        }
+
+        .cart-header .cart-title {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #3BB77E;
+        }
+
+        .close {
+            color: #aaaaaa;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 0 7px;
+        }
+
+        .close:hover {
+            color: #fff;
+            cursor: pointer;
+            background-color: red;
+        }
+
+        .cart-body {
+            padding: 10px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: auto 27px;
+        }
+
+        .cart-total-title {
+            color: #aaaaaa;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .cart-total-price {
+            color: #3BB77E;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .cart-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            border-top: 2px solid #aaaaaa;
+            padding: 5px;
+            margin: 27px;
+            margin-bottom: auto;
+        }
+
+        .cart-footer button {
+            margin: 5px;
+            padding: 10px 25px;
+            font-size: 16px;
+            background-image: linear-gradient(to right, green, white);
+            color: white;
+            border-radius: 5px;
+            border: 2px solid white;
+            background-size: 300%;
+            transition: .5s;
+            font-weight: 600;
+        }
+
+        .cart-footer button:hover {
+            color: #3BB77E;
+            border: 2px solid #3BB77E;
+            border-radius: 5px;
+            background-position: right;
+        }
+
+        .cart-items {
+            margin: 27px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="Buy">Mua</button>
+    <div class="cart">
+        <div class="cart-header">
+            <h5 class="cart-title">Your Cart</h5>
+            <span class="close">&times;</span>
+        </div>
+        <div class="cart-body">
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total:</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <button type="button" class="close-footer">Close</button>
+            <button type="button" class="order">Order</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="tab-content">
+            <div class="tab-pane ">
+                <div class="row ">
+
+                    <div class="col col-2-4 col-4 col-6 col-12">
+                        <div class="popular-product-cart-wrap">
+                            <div class="product-cart-img">
+                                <img class="img"
+                                    src="https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
+                                    alt="">
+                            </div>
+                            <div class="product-cart-content">
+                                <h2>
+                                    <a href="" class="product-cart-title">Seeds of Change Organic Quinoa, Brown, & Red
+                                        Rice</a>
+                                </h2>
+                                <div class="product-rate-cover">
+                                    <div class="product-rate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="number-star">(4.0)</span>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <div class="current-price">
+                                                <span>$</span>
+                                                <p class="number">38</p>
+                                            </div>
+                                            <div class="old-price">
+                                                <span>$52</span>
+                                            </div>
+                                        </div>
+                                        <div class="add-cart">
+                                            <button type="button" class="btn-cart"><i class='bx bx-cart'></i>Add
+                                                Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col col-2-4 col-4 col-6 col-12">
+                        <div class="popular-product-cart-wrap">
+                            <div class="product-cart-img">
+                                <img class="img"
+                                    src="https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
+                                    alt="">
+                            </div>
+                            <div class="product-cart-content">
+                                <h2>
+                                    <a href="" class="product-cart-title">All Natural Italian-Style Chicken
+                                        Meatballs</a>
+                                </h2>
+                                <div class="product-rate-cover">
+                                    <div class="product-rate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="number-star">(4.0)</span>
+
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <div class="current-price">
+                                                <span>$</span>
+                                                <p class="number">38</p>
+                                            </div>
+                                            <div class="old-price">
+                                                <span>$52</span>
+                                            </div>
+                                        </div>
+                                        <div class="add-cart">
+                                            <button type="button" class="btn-cart"><i class='bx bx-cart'></i>Add
+                                                Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var buybtn = document.getElementById("Buy");
+        var cartForm = document.getElementsByClassName("cart")[0];
+        buybtn.onclick = function () {
+            cartForm.style.display = "block";
+        }
+        var btnRemove = document.getElementsByClassName("close")[0];
+        var btnRemoveCart = document.getElementsByClassName("close-footer")[0];
+
+        btnRemove.onclick = function () {
+            cartForm.style.display = "none";
+        }
+
+        btnRemoveCart.onclick = function () {
+            cartForm.style.display = "none";
+        }
+        var order = document.getElementsByClassName("order")[0];
+
+        function delete_item() {
+            var cart_item = document.getElementsByClassName("cart-items")[0];
+            var cart_rows = cart_item.getElementsByClassName("cart-item");
+            for (var i = 0; i < cart_rows.length;) {
+                cart_rows[i].remove()
+            }
+        }
+        order.onclick = function () {
+            alert("thank you for your shopping")
+            delete_item()
+            updatetotal()
+        }
+
+        var addcart = document.getElementsByClassName("btn-cart");
+        for (var i = 0; i < addcart.length; i++) {
+            addcart[i].addEventListener("click", function () {
+                var button = event.target;
+                var product = button.parentElement.parentElement;
+                var price = product.getElementsByClassName("number")[0].innerText
+                var img = product.parentElement.parentElement.parentElement.getElementsByClassName("img")[0].src
+                var title = product.parentElement.parentElement.getElementsByClassName("product-cart-title")[0].innerText
+                addItems(img, price, title)
+                cartForm.style.display = "block";
+                updatetotal()
+            })
+        }
+        function addItems(img, price, title) {
+            var cart_item_add = document.createElement("div")
+            cart_item_add.classList.add("cart-item")
+
+            var cart_items = document.getElementsByClassName("cart-items")[0]
+            var cart_title_cart = cart_items.getElementsByClassName("title-item");
+            for (var i = 0; i < cart_title_cart.length; i++) {
+                if (cart_title_cart[i].innerText == title) {
+                    alert("Da co")
+                    return
+                }
+            }
+            var content = `
+        <div class="cart-img">
+            <img class="cart-image-item" src="${img}" width="100" height="100">
+        </div>
+        <div class="cart-title-item">
+            <p class="title-item">${title}</p>
+        </div>
+        <div class="cart-price">
+            <span>$</span><p class="cart-price-item">${price}</p>
+        </div>
+        <div class="input-cart">
+            <input class="cart-quantity" type="number" value="1">
+            <button class="btn-danger" type="button">Delete</button>
+        </div>`
+            cart_item_add.innerHTML = content
+            cart_items.append(cart_item_add);
+
+            var quantity = cart_item_add.getElementsByClassName("cart-quantity");
+            for (var i = 0; i < quantity.length; i++) {
+                quantity[i].addEventListener("change", function () {
+                    var input = event.target
+                    if (isNaN(input.value) || input.value <= 0) {
+                        input.value = 1;
+                    }
+                    updatetotal()
+                })
+            }
+
+            var remover_cart = cart_item_add.getElementsByClassName("btn-danger")
+            for (var i = 0; i < remover_cart.length; i++) {
+                remover_cart[i].addEventListener("click", function () {
+                    var button = event.target;
+                    button.parentElement.parentElement.remove();
+                    updatetotal()
+                })
+            }
+        }
+        function updatetotal() {
+            var cart_item = document.getElementsByClassName("cart-items")[0];
+            var cart_rows = cart_item.getElementsByClassName("cart-item");
+            var total = 0;
+            for (var i = 0; i < cart_rows.length; i++) {
+                var content_item = cart_rows[i];
+                var price_item = content_item.getElementsByClassName("cart-price-item")[0];
+                console.log(price_item);
+                price = parseFloat(price_item.innerText);
+                console.log(price);
+                var quantity_cart = content_item.getElementsByClassName("cart-quantity")[0];
+                var quantity = quantity_cart.value;
+                total = total + (price * quantity);
+            }
+            document.getElementsByClassName("cart-total-price")[0].innerText = "$" + total
+        }
+
+    </script>
+
+</body>
+
+</html>

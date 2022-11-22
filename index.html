@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/plugin/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/css/product-description.css">
+    <link rel="stylesheet" href="assets/css/reponsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Nest - Multipurpose eCommerce</title>
 </head>
@@ -18,89 +23,72 @@
             <div class="header-top">
                 <div class="container">
                     <div class="header-top-wrapper">
-                        <div class="logo-primary">
+                        <a class="logo-primary js-page-home" href="index.html">
                             <img class="icon-logo" src="assets/img/logo.svg" alt="">
+                        </a>
+                        <div class="icon-navbar-wrap">
+                            <i class="fa-solid fa-bars icon-navbar js-icon-navbar"></i>
                         </div>
-                        <div class="search">
-                            <form action="">
-                                <div class="search-select">
-                                    <span class="search-categories">All Categories</span>
-                                    <i class="fa-solid fa-chevron-down icon-down"></i>
-                                </div>
 
-                                <input class="search-input" type="search" placeholder="Search for items...">
-                            </form>
+                        <div class="header-top-mid">
+                            <div class="input-search-wrap">
+                                <input class="input-search js-search-product" type="search"
+                                    placeholder="Search for items...">
+                                <a href="" class="icon-search-header js-submit-search">
+                                    <i class="fa-solid fa-magnifying-glass "></i></a>
+                            </div>
+
+                            <div class="header-nav">
+                                <ul class="nav-list">
+                                    <li class="nav-item ">
+                                        <a class="color-active nav-link  js-page-home" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-page-shop" href="">Shop</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-page-about" href="">About</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="header-action">
                             <div class="heart-wrap">
                                 <a href="" class="icon-cart">
                                     <img src="assets/img/icon-heart.svg" alt="">
-                                    <span class="amount-product">6</span>
+                                    <span class="amount-wishlist">6</span>
                                 </a>
                             </div>
                             <div class="cart-wrap">
-                                <a href="" class="icon-cart">
+                                <a class="icon-cart">
                                     <img src="assets/img/icon-cart.svg" alt="">
-                                    <span class="amount-product">3</span>
+                                    <span class="amount-product">0</span>
                                 </a>
-                                
+
                                 <div class="cart-dropdown-wrap">
-                                    <ul class="cart-dropdown-list">
-                                        <li class="cart-dropdown-item">
-                                            <div class="cart-dropdown-img">
-                                                <a href="">
-                                                    <img src="assets/img/cart-thumbnail-3.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <h4 class="cart-dropdown-title">Daisy Casual Bag</h4>
-                                                <p class="cart-dropdown-price">
-                                                    <span>1 ×</span>
-                                                    $800.00
-                                                </p>
-                                            </div>
-                                            <div class="cart-dropdown-delete">
-                                                <i class="fa-solid fa-xmark"></i>
-                                            </div>
-                                        </li>
-                                        <li class="cart-dropdown-item">
-                                            <div class="cart-dropdown-img">
-                                                <a href="">
-                                                    <img src="assets/img/cart-thumbnail-2.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <h4 class="cart-dropdown-title">Corduroy Shirts</h4>
-                                                <p class="cart-dropdown-price">
-                                                    <span>1 ×</span>
-                                                    $3200.00
-                                                </p>
-                                            </div>
-                                            <div class="cart-dropdown-delete">
-                                                <i class="fa-solid fa-xmark"></i>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <ul class="cart-dropdown-list"></ul>
                                     <div class="cart-dropdown-total-wrap">
                                         <div class="cart-dropdown-total">
                                             <p>Total</p>
-                                            <span class="cart-dropdown-total-bill">$4000.00</span>
+                                            <span class="cart-dropdown-total-bill"></span>
                                         </div>
                                         <div class="cart-dropdown-button">
                                             <a href="#" class="btn button-view">View Cart</a>
-                                            <a href="#" class="btn button-checkout">Checkout</a>
+                                            <a class="btn button-checkout js-check-out">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class=" account-wrap js-login">
+                            <div class="account-wrap js-login-btn">
                                 <img src="assets/img/icon-user.svg" alt="">
-                                <a>
-                                    <!-- <span class="account ">Account</span> -->
-                                </a>
                             </div>
-                            <!-- <div class="header-action-logged ">
-                                <a href="">MẾN VÕ</a>
+                            <!-- Thay đổi icon user -->
+                            <div class="header-action-logged">
+                                <div id="js-accout-user"></div>
                                 <div class="logged-dropdown-wrap modal-dropdow-hover">
                                     <ul class="logged-dropdown-list">
                                         <li class="logged-dropdown-item">
@@ -109,273 +97,1608 @@
                                                 <p>My Account</p>
                                             </a>
                                         </li>
+                                        <li class="logged-dropdown-item js-order-history">
+                                            <a class="">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <p>Order History</p>
+                                            </a>
+                                        </li>
+                                        <li class="logged-dropdown-item js-delivery">
+                                            <a>
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <p>Delivery</p>
+                                            </a>
+                                        </li>
                                         <li class="logged-dropdown-item">
                                             <a href="">
                                                 <i class="fa-solid fa-right-from-bracket icon-logout"></i>
-                                                <p>Log Out</p>
+                                                <p class="js-log-out">Log Out</p>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="header-bottom">
-                <div class="container">
-                    <div class="header-wrapper-bottom">
-                        <div class="header-nav">
-                            <div class="main-categori">
-                                <div class="categori-button-active js-categori ">
-                                    <i class="fa-solid fa-table-cells-large icon-table-cell"></i>
-                                    <span>Browse</span>
-                                    <div>
-                                        <div>All</div>
-                                        <div>Categories</div>
+
+
+        </div>
+        <div class="content ">
+            <div class="js-change-content">
+                <div class="home-slide">
+                    <div class="container">
+                        <div class="home-slide-cover">
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <div class="slide slide-first">
+                                <img src="assets/img/slider-1.png" alt="">
+                            </div>
+                            <div class="slide slide-last">
+                                <img src="assets/img/slider-2.png" alt="">
+                            </div>
+
+                            <div class="navigation-auto">
+                                <div class="auto-btn1"></div>
+                                <div class="auto-btn2"></div>
+                            </div>
+
+                            <div class="navigaiton-manual">
+                                <label for="radio1" class="manual-btn"></label>
+                                <label for="radio2" class="manual-btn"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="featured-categories">
+                    <div class="container">
+                        <div class="section-title">
+                            <div class="title">
+                                <h3>Featured Categories</h3>
+                            </div>
+                            <div class="slide-arrow">
+                                <span class="slide-arrow-left">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                                <span class="slide-arrow-right">
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list-featured-categories">
+                            <div class="row">
+                                <div class="col-1-2 ">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-13.png" alt="">
+                                        <h6>Cake & Milk</h6>
                                     </div>
-                                    <div class="icon-down-categori">
-                                        <i class="fa-solid fa-chevron-down js-icon-up icon-down"></i>
+
+                                </div>
+
+                                <div class=" col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-1.png" alt="">
+                                        <h6>Cabbage</h6>
                                     </div>
                                 </div>
 
-                                <div class="categori-modal js-modal-categori">
-                                    <div class="categori-modal-inner">
-                                        <ul>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-1.svg" alt="">
-                                                    <p>Milks and Dairies</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-2.svg" alt="">
-                                                    <p>Clothing & beauty</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-3.svg" alt="">
-                                                    <p> Pet Foods & Toy</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-4.svg" alt="">
-                                                    <p> Baking material</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-5.svg" alt="">
-                                                    <p> Fresh Fruit</p>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-2.png" alt="">
+                                        <h6>Strawberry</h6>
+                                    </div>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-12.png" alt="">
+                                        <h6>Oganic kiwi</h6>
+                                    </div>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-11.png" alt="">
+                                        <h6>Peach</h6>
+                                    </div>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-4.png" alt="">
+                                        <h6>Blueberry</h6>
+                                    </div>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-9.png" alt="">
+                                        <h6>Apple</h6>
+                                    </div>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-14.png" alt="">
+                                        <h6>Sank</h6>
+                                    </div>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-5.png" alt="">
+                                        <h6>Apple</h6>
+                                    </div>
+                                </div>
 
-                                        <ul class="list-item-right">
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-6.svg" alt="">
-                                                    <p> Wines & Drinks</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-7.svg" alt="">
-                                                    <p> Fresh Seafood</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-8.svg" alt="">
-                                                    <p> Fast food</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-9.svg" alt="">
-                                                    <p> Vegetables</p>
-                                                </a>
-                                            </li>
-                                            <li class="categori-modal-item">
-                                                <a href="">
-                                                    <img src="assets/img/category-10.svg" alt="">
-                                                    <p> Bread and Juice</p>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                <div class="col-1-2">
+                                    <div class="cover-button-product">
+                                        <img src="assets/img/cat-3.png" alt="">
+                                        <h6>Sank</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="product-ads">
+                            <div class="row">
+                                <div class="cover-product-ads col-xl-4 ">
+                                    <img src="assets/img/banner-1.png" alt="">
+                                    <div class="banner-text">
+                                        <h3>
+                                            Everyday Fresh &
+                                            <br>
+                                            Clean whit Our
+                                            <br>
+                                            Products
+                                        </h3>
+                                        <div class="button-show">
+                                            <a>
+                                                <h5>Show Now<i class="fa-solid fa-arrow-right-long"></i></h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cover-product-ads col-xl-4">
+                                    <img src="assets/img/banner-2.png" alt="">
+                                    <div class="banner-text">
+                                        <h3>
+                                            Make your Breakfast
+                                            <br>
+                                            Healthy and Easy
+                                        </h3>
+                                        <div class="button-show">
+                                            <a>
+                                                <h5>Show Now<i class="fa-solid fa-arrow-right-long"></i></h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cover-product-ads col-xl-4">
+                                    <img src="assets/img/banner-3.png" alt="">
+                                    <div class="banner-text">
+                                        <h3>
+                                            The best Oganinc
+                                            <br>
+                                            Products Online
+                                        </h3>
+                                        <div class="button-show">
+                                            <a>
+                                                <h5>Show Now<i class="fa-solid fa-arrow-right-long"></i></h5>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="nav">
-                                <ul class="nav-list">
-                                    <li class="nav-item hot-deals">
-                                        <i class="fa-solid fa-fire icon-fire"></i>
-                                        <a class="nav-link" href="">Deals</a>
-                                    </li>
-                                    <li class="nav-item color-active">
-                                        <a class="nav-link" href="">
-                                            Home
-                                            <i class="fa-solid fa-chevron-down icon-down color-active"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular-products mt-30">
+                    <div class="container">
+                        <div class="section-title">
+                            <div class="title">
+                                <h3>Popular Products</h3>
+                            </div>
+                            <div class="slide-arrow">
+                                <span class="slide-arrow-left js-arrow-left">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                                <span class="slide-arrow-right js-arrow-right">
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane list-product-wrap close-product-description-wrap">
+                                <div class="list-product-1 show-product ">
+                                    <div class="row">
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src img-product-box"
+                                                        src="/assets/img/product-1-1.jpg" alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Seeds of Change
+                                                        Organic Quinoa, Brown, & Red Rice
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$28</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-2-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">All Natural
+                                                        Italian-Style Chicken Meatballs
+                                                    </a>
+
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$52</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-3-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Angie’s
+                                                        Boomchickapop
+                                                        Sweet & Salty Kettle Corn
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$48</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-6-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Seeds of Change
+                                                        Organic Quinoa, Brown, & Red Rice
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$53</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-12-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Haagen-Dazs
+                                                        Caramel
+                                                        Cone Ice Cream Ketchup
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$47</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-4-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Foster Farms
+                                                        Takeout
+                                                        Crispy Classic Buffalo Wings
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$17</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-5-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Blue Diamond
+                                                        Almonds
+                                                        Lightly Salted Vegetables
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$23</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-11-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Gorton’s Beer
+                                                        Battered
+                                                        Fish Fillets with soft paper
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$28</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-7-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">All Natural
+                                                        Italian-Style Chicken Meatballs
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$68</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-8-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Angie’s
+                                                        Boomchickapop
+                                                        Sweet & Salty Kettle Corn
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$94</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="list-product-2 ">
+                                    <div class="row">
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-5-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Blue Diamond
+                                                        Almonds
+                                                        Lightly Salted Vegetables
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$28</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-10-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Seeds of Change
+                                                        Organic Quinoa, Brown, & Red Rice
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$75</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-11-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Gorton’s Beer
+                                                        Battered
+                                                        Fish Fillets with soft paper
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$85</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-13-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Angie’s
+                                                        Boomchickapop
+                                                        Sweet & Salty Kettle Corn
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$24</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-6-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Seeds of Change
+                                                        Organic Quinoa, Brown, & Red Rice
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$53</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-14-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Foster Farms
+                                                        Takeout
+                                                        Crispy Classic Buffalo Wings
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$83</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-9-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Foster Farms
+                                                        Takeout
+                                                        Crispy Classic Buffalo Wings
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$36</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-16-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Chobani Complete
+                                                        Vanilla Greek Yogurt
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$35</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-15-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Blue Diamond
+                                                        Almonds
+                                                        Lightly Salted Vegetables
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$76</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-2-4 col-4 col-6 col-12 mb-24">
+                                            <div class="popular-product-cart-wrap js-page-description-product">
+                                                <div class="product-card-header">
+                                                    <img class="js-product-cart-src" src="/assets/img/product-12-1.jpg"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="product-cart-content">
+                                                    <a class="product-cart-title js-product-cart-title">Haagen-Dazs
+                                                        Caramel
+                                                        Cone Ice Cream Ketchup
+                                                    </a>
+                                                    <div class="product-card-bottom">
+                                                        <span class="js-product-cart-price current-price">$47</span>
+                                                        <div class="add-cart">
+                                                            <a class="btn">Add</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-box">
+                    <div class="container-box-1 content-box-1">
+                        <img class="container-box-img" src="/assets/img/banner-5.png" alt="">
+                        <div class="container-box-content">
+                            <a href="" class="title">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="link">
+                                <p>By </p><span><a href="">NestFood</a></span>
+                            </div>
+                            <div class="container-box-footer">
+                                <h3>$32.85</h3>
+                                <button class="button-cart"><a href="#popular-product-box"><i
+                                            class="fa-solid fa-cart-shopping"></i>Add</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-box-1 content-box-2">
+                        <img class="container-box-img" src="/assets/img/banner-6.png" alt="">
+                        <div class="container-box-content">
+                            <a href="" class="title">Perdue Simply Smart Organics Gluten Free</a>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="link">
+                                <p>By </p><span><a href="">Old El Paso</a></span>
+                            </div>
+                            <div class="container-box-footer">
+                                <h3>$24.85</h3>
+                                <button class="button-cart"><a href="#popular-product-box"><i
+                                            class="fa-solid fa-cart-shopping"></i>Add</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-box-1 content-box-3">
+                        <img class="container-box-img" src="/assets/img/banner-7.png" alt="">
+                        <div class="container-box-content">
+                            <a href="" class="title">Signature Wood-Fired Mushroom and Caramelized</a>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="link">
+                                <p>By</p> <span><a href="">Progresso</a></span>
+                            </div>
+                            <div class="container-box-footer">
+                                <h3>$12.85</h3>
+                                <button class="button-cart"><a href="#popular-product-box"><i
+                                            class="fa-solid fa-cart-shopping"></i>Add</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-box-1 content-box-4">
+                        <img class="container-box-img" src="/assets/img/banner-8.png" alt="">
+                        <div class="container-box-content">
+                            <a href="" class="title">Simply Lemonade with Raspberry Juice</a>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="link">
+                                <p>By </p><span><a href="">Yoplait</a></span>
+                            </div>
+                            <div class="container-box-footer">
+                                <h3>$15.85</h3>
+                                <button class="button-cart"><a href="#popular-product-box"><i
+                                            class="fa-solid fa-cart-shopping"></i>Add</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typical-products-wrap mt-30">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-3 col-4 col-6 col-12">
+                                <h4 class="typical-products-title mb-30">
+                                    Top Selling
+                                </h4>
+                                <div class="typical-products-list">
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-1.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Nestle Original Coffee-Mate Coffee Creamer</h6>
+                                                <p class="typical-products-item-price">$32</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-2.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Organic Cage-Free Grade A Large Brown Eggs</h6>
+                                                <p class="typical-products-item-price">$52</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-3.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Seeds of Change Organic Quinoa, Brown, & Red Rice</h6>
+                                                <p class="typical-products-item-price">$43</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-3 col-4 col-6 col-12">
+                                <h4 class="typical-products-title mb-30">
+                                    Trending Products
+                                </h4>
+                                <div class="typical-products-list">
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-4.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Organic Cage-Free Grade A Large Brown Eggs</h6>
+                                                <p class="typical-products-item-price">$22</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-5.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Nestle Original Coffee-Mate Coffee Creamer</h6>
+                                                <p class="typical-products-item-price">$34</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-6.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Naturally Flavored Cinnamon Vanilla Light Roast Coffee</h6>
+                                                <p class="typical-products-item-price">$41</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-3 col-4 col-6 col-12">
+                                <h4 class="typical-products-title mb-30">
+                                    Recently added
+                                </h4>
+                                <div class="typical-products-list">
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-7.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Pepperidge Farm Farmhouse Hearty White Bread</h6>
+                                                <p class="typical-products-item-price">$51</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-8.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Organic Frozen Triple Berry Blend</h6>
+                                                <p class="typical-products-item-price">$41</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-9.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>
+                                                    Oroweat Country Buttermilk Bread</h6>
+                                                <p class="typical-products-item-price">$44</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-3 col-4 col-6 col-12">
+                                <h4 class="typical-products-title mb-30">
+                                    Top Rated
+                                </h4>
+                                <div class="typical-products-list">
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-10.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>
+                                                    Foster Farms Takeout Crispy Classic Buffalo Wings</h6>
+                                                <p class="typical-products-item-price">$43</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-11.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>Angie’s Boomchickapop Sweet & Salty Kettle Corn</h6>
+                                                <p class="typical-products-item-price">$37</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="typical-products-item">
+                                        <div class="row">
+                                            <div class="col col-xl-4 col-lg-4 col-12 typical-products-img">
+                                                <img src="/assets/img/thumbnail-12.jpg" alt="">
+                                            </div>
+                                            <div class="col col-xl-8 col-lg-8 col-12 typical-products-item-title">
+                                                <h6>All Natural Italian-Style Chicken Meatballs</h6>
+                                                <p class="typical-products-item-price">$76</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="page-shop-wrap js-open-page-shop">
+            <div class="container">
+                <div class="row">
+                    <div class="page-shop">
+                        <div class="categories-shop-wrap container">
+                            <div class="categories-shop">
+                                <h5 class="title-category">Category</h5>
+                                <ul class="title-product-list"></ul>
+                            </div>
+                            <div class="banner-img-sidebar">
+                                <img src="/assets/img/banner-11.png" alt="">
+                                <div class="title-banner-sidebar">
+                                    <p>Oganic</p>
+                                    <h4>Sale 17% on <span>Organic</span> Juice</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="categories-product container">
+                            <div class="row js-product-lists"></div>
+
+                            <div class="pagination-area">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item-arrow">
+                                        <a href="">
+                                            <i class="fa-solid fa-left-long"></i>
                                         </a>
 
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">
-                                            Shop
-                                            <i class="fa-solid fa-chevron-down icon-down"></i>
-                                        </a>
+                                    <div class="page-controller js-page-controller">
 
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">Vendors</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">Contact</a>
+                                    </div>
+
+                                    <li class="pagination-item-arrow">
+                                        <a href="/index.html?cate_id=snack">
+                                            <i class="fa-solid fa-right-long"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="header-hotline">
-                            <img class="icon-headphones" src="assets/img/icon-headphone.svg" alt="">
-                            <p>
-                                <span class="hotline">1900 - 888</span>
-                                <span class="support-center">24/7 Support Center</span>
-                            </p>
-                        </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="content">
-            <div class="home-slide">
-                <div class="container">
-                    <div class="home-slide-cover">
-                        <img src="assets/img/slider-1.png" alt="">
+
+
+
+        <div class="about-shop-wrap mt-30 js-open-page-about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-shop col-10 m-auto">
+                        <div class="about-header mb-30 row">
+                            <div class="col col-xl-6 col-12">
+                                <div class="about-img-primary">
+                                    <img src="/assets/img/about-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 col-12 mt-30 about-content-header">
+                                <div class="about-title-content-header mb-30">Welcome to Nest</div>
+                                <div class="mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod
+                                    tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nullam quis
+                                    ante
+                                    etiam sit amet orci egetsedDuis aute irure dolor in reprehenderit in voluptate id
+                                    est
+                                    laborum.</div>
+                                <div class="mb-30">
+                                    Ius ferri velit sanctus cu, sed at soleat accusata. Dictas prompta et Ut placerat
+                                    legendos interpre.Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante
+                                    etiam sit amet orci egetsed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua.
+                                </div>
+
+                                <div class="mb-30">
+                                    Turpis massa
+                                    tincidunt dui ut ornare lectus. Auctor elit sed vulputate mi sit amet. Commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate id est laborum.
+                                </div>
+
+                                <div class="about-slide-img">
+                                    <div class="about-slide-img-item">
+                                        <img src="../assets/img/about-2.png" alt="">
+                                    </div>
+                                    <div class="about-slide-img-item">
+                                        <img src="../assets/img/about-3.png" alt="">
+                                    </div>
+                                    <div class="about-slide-img-item">
+                                        <img src="../assets/img/about-4.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-60">
+                            <div class="container">
+                                <h1 class="our-team-title-primary">What We Provide?</h1>
+                                <div class="row">
+                                    <div class="col col-4">
+                                        <div class="featured-card">
+                                            <img src="../assets/img/icon-1.svg" alt="">
+                                            <h4 class="mb-30">Best Prices & Offers</h4>
+                                            <p>There are many variations of passages of Lorem Ipsum available, but the
+                                                majority have suffered alteration in some form
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col col-4">
+                                        <div class="featured-card">
+                                            <img src="../assets/img/icon-2.svg" alt="">
+                                            <h4 class="mb-30">100% Satisfaction</h4>
+                                            <p>There are many variations of passages of Lorem Ipsum available, but the
+                                                majority have suffered alteration in some form
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col col-4">
+                                        <div class="featured-card">
+                                            <img src="../assets/img/icon-3.svg" alt="">
+                                            <h4 class="mb-30">Great Daily Deal</h4>
+                                            <p>There are many variations of passages of Lorem Ipsum available, but the
+                                                majority have suffered alteration in some form
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row our-performance">
+                            <div class="col col-xl-6">
+                                <div class="img-our-performance">
+                                    <img src="../assets/img/about-5.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col col-xl-6 our-performance-content">
+                                <h4>Our performance</h4>
+                                <h1>Your Partner for e-commerce grocery solution</h1>
+                                <p class="mb-30">Ed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium
+                                    doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                    architecto</p>
+                                <p class="mb-30">Pitatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                                    enim
+                                    ipsam voluptatem
+                                    quia voluptas sit aspernatur aut odit aut fugit, sed quia</p>
+                            </div>
+                        </div>
+
+                        <div class="row about-description mb-30">
+                            <div class="col col-4 about-description-item">
+                                <h1>Who we are</h1>
+                                <p class="mt-30">Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut
+                                    tellus eros donec
+                                    ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.
+                                </p>
+                            </div>
+                            <div class="col col-4 about-description-item">
+                                <h1>Our history</h1>
+                                <p class="mt-30">Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut
+                                    tellus eros donec
+                                    ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.
+                                </p>
+
+                            </div>
+                            <div class="col col-4 about-description-item">
+                                <h1>Our mission</h1>
+                                <p class="mt-30">Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut
+                                    tellus eros donec
+                                    ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="about-banner">
+                            <img src="../assets/img/about-9.png" alt="">
+                        </div>
+
+                        <div class="row mt-30 our-team-wrap">
+                            <div class="container">
+                                <h1 class="our-team-title-primary">Our Team</h1>
+                                <div class="row">
+                                    <div class="col col-4 col-lg-12 our-team-description">
+                                        <h6>Our Team</h6>
+                                        <h1>Meet Our Expert Team</h1>
+                                        <p class="mt-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam
+                                            massa dolor
+                                            imperdiet
+                                            neccon sequata congue idsem. Maecenas malesuada faucibus finibus.</p>
+                                        <p class="mt-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam
+                                            massa dolor
+                                            imperdiet
+                                            neccon sequata congue idsem. Maecenas malesuada faucibus finibus.</p>
+                                    </div>
+                                    <div class="col  col-xl-8">
+                                        <div class="row">
+                                            <div class="col col-4 col-lg-6 our-team-img">
+                                                <img src="../assets/img/about-6.png" alt="">
+                                                <div class="our-team-info">
+                                                    <h2>H. Merinda</h2>
+                                                    <h5>CEO & Co-Founder</h5>
+                                                    <div class="our-team-contact">
+                                                        <i class="fa-brands fa-facebook"></i>
+                                                        <i class="fa-brands fa-twitter"></i>
+                                                        <i class="fa-brands fa-instagram"></i>
+                                                        <i class="fa-brands fa-youtube"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col col-4 col-lg-6  our-team-img">
+                                                <img src="../assets/img/about-8.png" alt="">
+                                                <div class="our-team-info">
+                                                    <h2>Dilan Specter</h2>
+                                                    <h5>Head Engineer</h5>
+                                                    <div class="our-team-contact">
+                                                        <i class="fa-brands fa-facebook"></i>
+                                                        <i class="fa-brands fa-twitter"></i>
+                                                        <i class="fa-brands fa-instagram"></i>
+                                                        <i class="fa-brands fa-youtube"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="popular-categories">
-                <div class="container">
-                    <div class="section-title">
-                        <div class="title">
-                            <h3>Featured Categories</h3>
-                            <ul class="list-item">
-                                <li class="item">
-                                    <a class="nav-link" href="">Cake & Milk</a>
-                                </li>
-                                <li class="item">
-                                    <a class="nav-link" href="">Coffes & Teas</a>
-                                </li>
-                                <li class="item color-active">
-                                    <a class=" nav-link " href="">Pet Foods</a>
-                                </li>
-                                <li class="item">
-                                    <a class="nav-link" href="">Vegetables</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="slide-arrow">
-                            <span class="slide-arrow-left">
-                                <i class="fa-solid fa-arrow-left-long"></i>
-                            </span>
-                            <span class="slide-arrow-right">
-                                <i class="fa-solid fa-arrow-right-long"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="list-featured-categories">
-
-                    </div>
-                </div>
-            </div>
-
         </div>
+
         <div class="footer">
+            <div class="container">
+                <div class="footer-img">
+                    <h2 class="footer-img__title">
+                        Stay home & get your daily
+                        </br>
+                        needs from our shop
+                    </h2>
+                    <p class="footer-img__text">Start You'r Daily Shopping with <span>Nest Mart</span></p>
+                    <div class="footer-img__control">
+                        <i class="footer-img__control-icon fa-sharp fa-solid fa-font-awesome"></i>
+                        <input type="text" class="footer-control__input" placeholder="Your email Address">
+                        <button class="footer-control__submit">Subscribe</button>
+                    </div>
+                    <img class="footer-img__content" src="./assets/img/footer-banner1.png" alt="">
+                    <img class="footer-img__background" src="./assets/img/banner-10.png" alt="">
+                </div>
+                <div class="footer-feature">
+                    <div class="footer-feature__link">
+                        <div class="banner-icon">
+                            <img src="assets/img/icon-1.png" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Best prices & offers</h3>
+                            <p>Orders $50 or more</p>
+                        </div>
+                    </div>
+                    <div class="footer-feature__link">
+                        <div class="banner-icon">
+                            <img src="assets/img/icon-2.png" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Free delivery</h3>
+                            <p>24/7 amazing services</p>
+                        </div>
+                    </div>
+                    <div class="footer-feature__link">
+                        <div class="banner-icon">
+                            <img src="assets/img/icon-3.png" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Great daily deal</h3>
+                            <p>When you sign up</p>
+                        </div>
+                    </div>
+                    <div class="footer-feature__link">
+                        <div class="banner-icon">
+                            <img src="assets/img/icon-4.png" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Wide assortment</h3>
+                            <p>Mega Discounts</p>
+                        </div>
+                    </div>
+                    <div class="footer-feature__link">
+                        <div class="banner-icon">
+                            <img src="assets/img/icon-5.png" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Easy returns</h3>
+                            <p>Within 30 days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-body">
+                    <div class="footer-body__item">
+                        <img class="footer-img__logo" src="./assets/img/logo.png" alt="">
+                        <p class="footer-logo__heading">Awesome grocery store website template</p>
+                        <ul class="contact-info">
+                            <li class="footer-logo__info"><img src="./assets/img/icon-location.png" alt=""><strong>
+                                    Address:</strong><span>5171 W Campbell Ave undefined Kent, Utah 53127 United
+                                    States</span></li>
+                            <li class="footer-logo__info"><img src="./assets/img/icon-contact.png" alt=""><strong> Call
+                                    Us:</strong><span>(+91) - 540-025-124553</span></li>
+                            <li class="footer-logo__info"><img src="./assets/img/icon-email-2.png" alt=""><strong>
+                                    Email:</strong><span>sale@Nest.com</span></li>
+                            <li class="footer-logo__info"><img src="./assets/img/icon-clock.png" alt=""><strong>
+                                    Hours:</strong><span>10:00 - 18:00, Mon - Sat</span></li>
+                        </ul>
 
+                    </div>
+                    <div class="footer-body__item">
+                        <h4 class="footer-body_title">Company</h4>
+                        <ul class="contact-info">
+                            <li><a href="#" class="footer-item__link">About Us</a></li>
+                            <li><a href="#" class="footer-item__link">Delivery Information</a></li>
+                            <li><a href="#" class="footer-item__link">Privacy Policy</a></li>
+                            <li><a href="#" class="footer-item__link">Terms &amp; Conditions</a></li>
+                            <li><a href="#" class="footer-item__link">Contact Us</a></li>
+                            <li><a href="#" class="footer-item__link">Support Center</a></li>
+                            <li><a href="#" class="footer-item__link">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-body__item">
+                        <h4 class="footer-body_title">Account</h4>
+                        <ul class="contact-info">
+                            <li><a href="#" class="footer-item__link">Sign In</a></li>
+                            <li><a href="#" class="footer-item__link">View Cart</a></li>
+                            <li><a href="#" class="footer-item__link">My Wishlist</a></li>
+                            <li><a href="#" class="footer-item__link">Track My Order</a></li>
+                            <li><a href="#" class="footer-item__link">Help Ticket</a></li>
+                            <li><a href="#" class="footer-item__link">Shipping Details</a></li>
+                            <li><a href="#" class="footer-item__link">Compare products</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-body__item">
+                        <h4 class="footer-body_title">Corporate</h4>
+                        <ul class="contact-info">
+                            <li><a href="#" class="footer-item__link">Become a Vendor</a></li>
+                            <li><a href="#" class="footer-item__link">Affiliate Progra</a></li>
+                            <li><a href="#" class="footer-item__link">Farm Business</a></li>
+                            <li><a href="#" class="footer-item__link">Farm Careers</a></li>
+                            <li><a href="#" class="footer-item__link">Our Suppliers</a></li>
+                            <li><a href="#" class="footer-item__link">Accessibility</a></li>
+                            <li><a href="#" class="footer-item__link">Promotions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-body__item">
+                        <h4 class="footer-body_title">Popular</h4>
+                        <ul class="contact-info">
+                            <li><a href="#" class="footer-item__link">Milk & Flavoured Milk</a></li>
+                            <li><a href="#" class="footer-item__link">Butter and Margarine</a></li>
+                            <li><a href="#" class="footer-item__link">Eggs Substitutes</a></li>
+                            <li><a href="#" class="footer-item__link">Marmalades</a></li>
+                            <li><a href="#" class="footer-item__link">Sour Cream and Dips</a></li>
+                            <li><a href="#" class="footer-item__link">Tea & Kombucha</a></li>
+                            <li><a href="#" class="footer-item__link">Cheese</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="footer-body_title">Install App</h4>
+                        <p class="footer-install">From App Store or Google Play</p>
+                        <div class="footer-dowload">
+                            <img class="footer-img__dowload" src="./assets/img/app-store.jpg" alt="">
+                            <img class="footer-img__dowload" src="./assets/img/google-play.jpg" alt="">
+                        </div>
+                        <p class="footer-install">Secured Payment Gateways</p>
+                        <img class="footer-img__pay" src="./assets/img/payment-method.png">
+                    </div>
+
+                </div>
+                <div class="footer-last__line">
+                </div>
+                <div class="footer-last">
+                    <div class="footer-last__info">
+                        <p class="font-last__info">© 2022,<strong class="color-font__lasinfo">Nest</strong> - HTML
+                            Ecommerce
+                            Template<br>All rights reserved<br></p>
+                    </div>
+                    <div class="footer-last__info">
+                        <div class="footer-hotline">
+                            <li class="footer-last__infoicon"><img class="hotline" src="assets/img/phone-call.png"
+                                    alt=""><strong>1900 - 6666</strong><span>Working 8:00 - 22:00</span></li>
+
+
+                        </div>
+                        <div class="footer-hotline__02">
+                            <li class="footer-last__infoicon"><img class="hotline" src="assets/img/phone-call.png"
+                                    alt=""><strong>1900 - 8888</strong><span>24/7 Support Center</span></li>
+
+                        </div>
+                    </div>
+                    <div class="footer-last__info">
+                        <div class="socical-info">
+                            <div class="mobile-social-icon">
+                                <h6 class="last-title">Follow Us</h6>
+                                <a href="#"><img class="mobile-icon" src="assets/img/icon-facebook-white.png"
+                                        alt="" /></a>
+                                <a href="#"><img class="mobile-icon" src="assets/img/icon-twitter-white.png"
+                                        alt="" /></a>
+                                <a href="#"><img class="mobile-icon" src="assets/img/icon-instagram-white.png"
+                                        alt="" /></a>
+                                <a href="#"><img class="mobile-icon" src="assets/img/icon-pinterest-white.png"
+                                        alt="" /></a>
+                                <a href="#"><img class="mobile-icon" src="assets/img/icon-youtube-white.png"
+                                        alt="" /></a>
+                            </div>
+                            <p class="">Up to 15% discount on your first subscribe</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
+
+    <div class="modal-menu-mini js-modal-menu-mini">
+        <div class="modal-menu-overlay"></div>
+        <div class="modal-menu-body">
+            <div class="menu-mini-top">
+                <a class="menu-mini-logo js-page-home" href="/">
+                    <img class="" src="/assets/img/logo.png" alt="">
+                </a>
+                <div class="mobile-menu-close js-close-modal-mini">
+                    <i class="fa-solid fa-xmark icon-close-modal-mini "></i>
+                </div>
+            </div>
+            <div class="menu-mini-content">
+                <div class="header-nav-menu-mini">
+                    <ul class="nav-list">
+                        <li class="nav-item color-active">
+                            <a class="nav-link js-page-home" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-page-shop" href="">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-page-about" href="">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu-mini-info">
+                    <div class="menu-mini-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Our location</p>
+                    </div>
+                    <div class="menu-mini-info-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <p>(+84)-376873738</p>
+                    </div>
+                </div>
+                <div class="site-copyright">
+                    <p>Copyright 2022 © Nest. All rights reserved. Powered by AliThemes.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <!-- Modal register & modal login -->
     <div class="modal js-modal-register">
         <div class="modal__overlay"></div>
         <div class="modal__body">
-            <!-- Register form -->
-            <div class="auth-form ">
-                <div class="auth-form__container js-modal-container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng ký</h3>
-                        <span class="auth-form__switch-btn">Đăng nhập</span>
-                    </div>
-
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            <input type="text" placeholder="Email của bạn" class="auth-form__input">
+            <form action="" id="form-register">
+                <div class="auth-form ">
+                    <div class="auth-form__container js-modal-container">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng ký</h3>
+                            <span class="auth-form__switch-btn js-login ">Đăng nhập</span>
                         </div>
-                        <div class="auth-form__group">
-                            <input type="password" placeholder="Mật khẩu của bạn" class="auth-form__input">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" placeholder="Nhập lại mật khẩu" class="auth-form__input">
-                        </div>
-                    </div>
 
-                    <div class="auth-form__aside">
-                        <p class="auth-form__policy-text">
-                            Bằng việc đăng ký, bạn đã đồng ý với Nest - Multipurpose eCommerce về
-                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
-                            <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
-                        </p>
-                    </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" placeholder="Tên đăng nhập" class="auth-form__input"
+                                    id="auth-form__username">
+                                <div class="error">
 
-                    <div class="auth-form__control">
-                        <button class="btn js-modal-close auth-form__control-back btn--normal ">TRỞ LẠI</button>
-                        <button class="btn btn--primary view-cart ">ĐĂNG KÝ</button>
+                                </div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="text" placeholder="Email của bạn" class="auth-form__input"
+                                    id="auth-form__email">
+                                <div class="error">
+
+                                </div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" placeholder="Mật khẩu của bạn" class="auth-form__input"
+                                    id="auth-form__password">
+                                <div class="error">
+
+                                </div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" placeholder="Nhập lại mật khẩu" class="auth-form__input"
+                                    id="auth-form__confirm-password">
+                                <div class="error">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                Bằng việc đăng ký, bạn đã đồng ý với Nest - Multipurpose eCommerce về
+                                <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                            </p>
+                        </div>
+
+                        <div class="auth-form__control">
+                            <button class="btn auth-form__control-back btn--normal js-modal-close">TRỞ LẠI</button>
+                            <button type="submit" class="btn btn--primary view-cart ">ĐĂNG KÝ</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
+
         </div>
     </div>
 
     <div class="modal js-modal-login">
         <div class="modal__overlay"></div>
         <div class="modal__body">
-            Login form 
+            <form action="" id="form-login">
+                <div class="auth-form ">
+                    <div class="auth-form__container js-modal-container-login">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                            <span class="auth-form__switch-btn js-register">Đăng ký</span>
+                        </div>
+
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" placeholder="Username của bạn" class="auth-form__input"
+                                    id="auth-form__user-login">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" placeholder="Mật khẩu của bạn" class="auth-form__input"
+                                    id="auth-form__password-login">
+                            </div>
+                        </div>
+
+                        <div class="auth-form__aside">
+                            <p class="auth-form__help">
+                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                <span class="auth-form__help-separate"></span>
+                                <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                            </p>
+                        </div>
+
+                        <div class="auth-form__control">
+                            <button class="btn auth-form__control-back btn--normal js-modal-close">TRỞ LẠI</button>
+                            <button class="btn btn--primary view-cart ">ĐĂNG NHẬP</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal js-modal-delivery">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
             <div class="auth-form ">
-                <div class="auth-form__container js-modal-container-login">
+                <div class="auth-form__container js-modal-container-delivery">
+                    <div class="history-buy">
+                        <span class="title-history">Delivered</span>
+                        <span class="title-page"></span>
+                        <div class="close-history" onclick="closeDelivery()">&times;</div>
+                    </div>
+                    <div class="inner_delivery">
+                        <div class="delivery-container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-modal-quen">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <!-- Login form  -->
+            <div class="auth-form ">
+                <div class="auth-form__container js-modal-container-quen">
                     <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng nhập</h3>
-                        <span class="auth-form__switch-btn">Đăng ký</span>
+                        <h3 class="auth-form__heading">Quên mật khẩu</h3>
+                        <span class="auth-form__switch-btn js-login">Đăng nhập</span>
                     </div>
 
                     <div class="auth-form__form">
                         <div class="auth-form__group">
-                            <input type="text" placeholder="Email của bạn" class="auth-form__input">
+                            <input type="text" placeholder=" " class="auth-form__input" id="email-quen">
+                            <label for="name" class="hello">Email của bạn</label>
+                            <div class="error">
+
+                            </div>
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" placeholder="Mật khẩu của bạn" class="auth-form__input">
-                        </div>
-                    </div>
+                            <input type="text" placeholder=" " class="auth-form__input" id="user-quen">
+                            <label for="name" class="hello">User của bạn</label>
+                            <div class="error">
 
-                    <div class="auth-form__aside">
-                        <p class="auth-form__help">
-                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                            <span class="auth-form__help-separate"></span>
-                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                        </p>
+                            </div>
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" placeholder=" " class="auth-form__input" id="code-quen">
+                            <label for="name" class="hello">Nhập mã</label>
+                            <div class="error">
+
+                            </div>
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" placeholder=" " class="auth-form__input" id="pass-quen">
+                            <label for="name" class="hello">Mật khẩu mới</label>
+                            <label for="name" class="hello1">Hiện</label>
+                            <div class="error">
+
+                            </div>
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" placeholder=" " class="auth-form__input" id="pass2-quen">
+                            <label for="name" class="hello">Nhập lại mật khẩu mới</label>
+                            <label for="name" class="hello1">Hiện</label>
+                            <div class="error">
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="auth-form__control">
-                        <button class="btn auth-form__control-back btn--normal js-modal-close-login">TRỞ LẠI</button>
-                        <button class="btn btn--primary view-cart ">ĐĂNG NHẬP</button>
+                        <button class="btn auth-form__control-back btn--normal js-modal-close-quen">TRỞ LẠI</button>
+                        <button class="btn btn--primary view-cart" id="nhapnhap" onclick="xacnhan()">Tạo mật
+                            khẩu</button>
+                        <button class="btn btn--primary view-cart" id="xacnhan" onclick="quen()">Xác nhận</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal js-modal-history">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="auth-form ">
+                <div class="auth-form__container js-modal-container-history">
+                    <div class="history-buy">
+                        <span class="title-history">Your History</span>
+                        <span class="title-page"></span>
+                        <div class="close-history" onclick="closeHistory()">&times;</div>
+                    </div>
+                    <div class="inner_history">
+                        <div class="history-container">
+
+                        </div>
+                        <div class="pageNumber-history">
+                            <div class="prev"><i class="fa fa-arrow-left"></i></div>
+                            <div class="mid">
+                                <div class="page">
+
+                                </div>
+                            </div>
+                            <div class="next"><i class="fa fa-arrow-right"></i></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -383,7 +1706,10 @@
     </div>
 
 
-    <script src="assets/js/index.js"></script>
+    <script src="/assets/js/product.js"></script>
+    <script src="/assets/js/category.js"></script>
+    <!-- <script src="/assets/js/history.js"></script> -->
+    <script type="module" src="/assets/js/index.js"></script>
 </body>
 
 </html>

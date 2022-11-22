@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/plugin/fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu menu-sticky">
+        <div class="menu-top">
+            <div class="menu-top-content">
+                <span class="menu-top-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+                <div class="menu-top-text">
+                    <span class="text-menu">
+                        Menu Admin
+                    </span>
+                </div>
+                <div class="open-close">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="menu-bar">
+                <div class="menu-bar-content">
+                    <ul class="menu-bar-links">
+
+                        <li class="menu-bar-link" onclick="home_inner()">
+                            <div class="menu-bar-link-content">
+                                <i class="fa fa-home icon"></i>
+                                <span class="menu-bar-text">
+                                    Home
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="menu-bar-link" onclick="user_inner()">
+                            <div class="menu-bar-link-content">
+                                <i class="fa-regular fa-user icon"></i>
+                                <span class="menu-bar-text">
+                                    User
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="menu-bar-link" onclick="product()">
+                            <div class="menu-bar-link-content">
+                                <i class="fa fa-archive icon"></i>
+                                <span class="menu-bar-text">
+                                    Product
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="menu-bar-link" onclick="analytic()">
+                            <div class="menu-bar-link-content">
+                                <i class="fa fa-archive icon"></i>
+                                <span class="menu-bar-text">
+                                    Analytics 
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="menu-bar-link" onclick="order_inner()">
+                            <div class="menu-bar-link-content">
+                                <i class="fa fa-archive icon"></i>
+                                <span class="menu-bar-text">
+                                    Purchase Order
+                                </span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="menu-footer">
+            <div class="menu-footer-content">
+                <i class="fa fa-sign-out icon"></i>
+                <span class="menu-footer-text">
+                    Log Out
+                </span>
+            </div>
+        </div>
+        <div class="mode">
+            <span class="mode-content">Dark mode</span>
+            <div class="button-mode">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+    <div class="home">
+        <div class="header-home-content">
+            <div class="header-home">
+                <span class="text">Welcome Nest</span>
+            </div>
+            <div class="header-home-bottom">
+                <div class="bottom-content">
+                    <i class="fa-regular fa-user icon"></i><span>Admin</span>
+                </div>
+                <form action="admin.html" method="get">
+                    <input id="search" type="text" name="text" class="search-box" placeholder="Search here..." value="">
+                    <button type="submit">search</button>
+                </form>
+            </div>
+        </div>
+        <div class="body-home">
+            <div class="body-home-text">
+                <span class="text-home">DASHBOARD</span>
+                <span class="text-home2" id="text-home2">NEW PROJECT</span>
+            </div>
+
+            <!-- content inner -->
+            <div class="content-home">
+            </div>
+
+
+            <!-- analytic -->
+            <div class="analytic-info">
+                <div class="total-analytic-sum"></div>
+                <div class="order-analytic-sum"></div>
+                <div class="container-analytic">
+                    <table class="table-analytic">
+                        
+                    </table>
+                </div>
+            </div>
+
+            <!-- page number -->
+            <div class="pageNumber">
+                <div class="prev"><i class="fa fa-arrow-left"></i></div>
+                <div class="mid">
+                    <div class="page">
+                    
+                    </div>
+                </div>
+                <div class="next"><i class="fa fa-arrow-right"></i></div>
+            </div>
+
+
+        <!-- the add update  -->
+        <div class="add-update-product .addproduct">
+            <h3 class="Tieude">ADD PRODUCT</h3>
+            <div class="close-add-update">
+                &times;
+            </div>
+
+            <div class="input-product">
+                <div class="input">
+                    <label for="">Enter id</label>
+                    <input type="text" name="idtxt" id="id-product" class="product" readonly placeholder="Enter Id">
+                </div>
+    
+                <div class="input">
+                    <label for="">Enter picture</label>
+                    <input type="file" name="picturetxt" id="picture-product" class="picture-product" value="" accept=".jpg, .jng">
+                </div>
+    
+                <div class="input">
+                    <label for="">Enter name</label>
+                    <input type="text" name="nametxt" id="name-product" class="product"  placeholder="Enter name">
+                </div>
+    
+                <div class="input">
+                    <label for="">Enter price</label>
+                    <input type="text" name="pricetxt" id="price-product" class="product" value="" placeholder="Enter price">
+                </div>
+    
+                <div class="input">
+                    <label for="">Enter category</label>
+                    <select name="category" id="category-product" class="product">
+                        <option value="snaker">Snack</option>
+                        <option value="vegetable">Vegetable</option>
+                        <option value="freshfruit">Fresh Fruit</option>
+                        <option value="coffee">Coffee</option>
+                    </select>
+                </div>
+    
+                <div class="input">
+                    <label for="">Enter Detail</label>
+                    <textarea name="detailtxt" id="detail-product" class="detail-product" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="btn-btn">
+                <button class="add-product" onclick = "add()">Add</button>
+                <button class="update-product" onclick="update_product()">Update</button>
+            </div>
+        </div>
+        
+
+        <div class="detailProduct">
+            <div class="output">
+                
+            </div>
+        </div>  
+    </div>
+    <script src="admin.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>
