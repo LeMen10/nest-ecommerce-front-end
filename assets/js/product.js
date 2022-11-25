@@ -97,6 +97,14 @@ const PRODUCTDATA = [{
 },];
 
 
+// if(localStorage.getItem("PRODUCTDATA")){
+//     var json = localStorage.getItem("PRODUCTDATA")
+//     var product_product_product = JSON.parse(json)
+//     for(var i = 0 ; i < product_product_product.length ; i++){
+//             PRODUCTDATA[i] = product_product_product[i]
+//     }
+// }
+
 
 
 
