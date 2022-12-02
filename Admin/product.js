@@ -173,7 +173,7 @@ const add_update_product = document.getElementsByClassName('add-update-product')
 const close_add_update = document.getElementsByClassName("close-add-update")[0]
 
 function product() {
-    for(var i = 0 ; i < menu_bar_color.length ; i++){
+    for (var i = 0; i < menu_bar_color.length; i++) {
         menu_bar_color[i].classList.remove("menu-bar-link-color")
     }
     menu_bar_color[2].classList.add("menu-bar-link-color")

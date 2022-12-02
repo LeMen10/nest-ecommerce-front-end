@@ -1154,10 +1154,7 @@ body.dark .btn-btn button {
     color: red;
 }
 
-.detail-detail tr td {
-    /* text-align: center; */
-    /* border: 1px solid #199CFDFF; */
-}
+
 
 .detail-no {
     border-top: 1px solid #199CFDFF;
@@ -1222,86 +1219,101 @@ body.dark .btn-btn button {
     background-color: rgb(36, 207, 36);
 }
 
-.chart{
+.chart {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     color: var(--text-color);
 }
-.chart-1{
+
+.chart-1 {
     padding-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
-.thang1{
+
+.thang1 {
     height: 50px;
     width: 100%;
     background-color: rgb(247, 129, 129);
 }
-.thang2{
+
+.thang2 {
     height: 200px;
     width: 100%;
     background-color: rgb(239, 239, 117);
 }
-.thang3{
+
+.thang3 {
     height: 150px;
     width: 100%;
     background-color: rgb(118, 240, 118);
 }
-.thang4{
+
+.thang4 {
     height: 160px;
     width: 100%;
     background-color: rgb(110, 110, 242);
 }
-.thang5{
+
+.thang5 {
     height: 40px;
     width: 100%;
     background-color: rgb(244, 116, 244);
 }
-.thang6{
+
+.thang6 {
     height: 70px;
     width: 100%;
     background-color: rgb(148, 212, 237);
 }
-.thang7{
+
+.thang7 {
     height: 230px;
     width: 100%;
     background-color: rgb(249, 183, 118);
 }
-.thang8{
+
+.thang8 {
     height: 350px;
     width: 100%;
     background-color: rgb(151, 238, 210);
 }
-.thang9{
+
+.thang9 {
     height: 260px;
     width: 100%;
     background-color: rgb(226, 68, 97);
 }
-.thang10{
+
+.thang10 {
     height: 320px;
     width: 100%;
     background-color: rgb(178, 129, 227);
 }
-.thang11{
+
+.thang11 {
     height: 370px;
     width: 100%;
     background-color: rgb(130, 85, 93);
 }
-.thang12{
+
+.thang12 {
     height: 380px;
     width: 100%;
     background-color: rgb(231, 229, 143);
 }
-body.dark .helloooo{
-    background-image: linear-gradient(to right ,#654ea3, #eaafc8);
-}
-.helloooo{
-    background-image: linear-gradient(to right ,#bdb4d7, #efcedc);
+
+body.dark .helloooo {
+    background-image: linear-gradient(to right, #654ea3, #eaafc8);
 }
 
-.menu-bar-link-color{
+.helloooo {
+    background-image: linear-gradient(to right, #bdb4d7, #efcedc);
+}
+
+.menu-bar-link-color {
     background-color: var(--primary-color);
     color: #fff;
     border-radius: 12px;

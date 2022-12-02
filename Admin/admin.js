@@ -66,6 +66,7 @@ mode_button.addEventListener("click", function () {
 //logout
 var logOut = document.getElementsByClassName("menu-footer")[0]
 logOut.addEventListener("click", function () {
+    
     window.location.href = "../index.html"
 })
 
