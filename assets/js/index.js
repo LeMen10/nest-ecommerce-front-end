@@ -175,7 +175,7 @@ username.addEventListener("keyup", function () {
         kiemtra1 = true
     }
     else {
-        error.innerHTML = "Username không hợp lệ. Username chứa 6-12 ký tự và không chứa khoảng trắng"
+        error.innerHTML = "Username có 6-12 ký tự, không chứa khoảng trắng và dấu."
         error.style.color = "red"
         kiemtra1 = false
     }
@@ -234,68 +234,63 @@ confirmPassword.addEventListener("keyup", function () {
 })
 
 function register() {
-
     var user = localStorage.getItem(username.value);
     var checkUser = JSON.parse(user);
 
     if (username.value != "" && email.value != "" && password.value != "" && confirmPassword.value != "") {
 
 
-        if (password.value.length != 8) {
-            checkInputPassWord();
-        }
-        else {
-            if (password.value == confirmPassword.value) {
-                //check local co trong hay khong neu khong check thi checkUser tai else if se loi (null)
-                if (checkUser == null) {
-                    var day = new Date();
-                    var Day = day.getDate();
-                    var month = day.getMonth() + 1;
-                    var year = day.getFullYear();
+        if (password.value == confirmPassword.value) {
+            //check local co trong hay khong neu khong check thi checkUser tai else if se loi (null)
+            if (checkUser == null) {
+                var day = new Date();
+                var Day = day.getDate();
+                var month = day.getMonth() + 1;
+                var year = day.getFullYear();
 
-                    var newUser = {
-                        email: email.value,
-                        username: username.value,
-                        // password: password.value,
-                        day: Day,
-                        month: month,
-                        year: year,
-                    }
-                    var taiKhoanDk = {
-                        email: email.value,
-                        username: username.value,
-                        password: password.value,
-                    }
-                    Taikhoan_Dangky.push(newUser);
-                    var Taikhoan = JSON.stringify(Taikhoan_Dangky);
-                    localStorage.setItem("TaiKhoanDangKy", Taikhoan);
-
-                    var json = JSON.stringify(taiKhoanDk)
-                    localStorage.setItem(username.value, json)
-                    alert("Đăng ký thành công.")
-                    showModalLogin();
-                    username.value = "";
-                    email.value = "";
-                    password.value = "";
-                    confirmPassword.value = "";
-                    form.getElementsByClassName("error").innerHTML = "";
+                var newUser = {
+                    email: email.value,
+                    username: username.value,
+                    // password: password.value,
+                    day: Day,
+                    month: month,
+                    year: year,
                 }
-                else if (username.value == checkUser.username) {
-                    alert("Tài khoản có người đăng ký.")
-                    username.value = ""
-                    username.focus()
+                var taiKhoanDk = {
+                    email: email.value,
+                    username: username.value,
+                    password: password.value,
                 }
+                Taikhoan_Dangky.push(newUser);
+                var Taikhoan = JSON.stringify(Taikhoan_Dangky);
+                localStorage.setItem("TaiKhoanDangKy", Taikhoan);
+
+                var json = JSON.stringify(taiKhoanDk)
+                localStorage.setItem(username.value, json)
+                toast({
+                    title: 'Thành công!',
+                    message: 'Bạn đã đăng ký thành công!',
+                    type: 'success',
+                    duration: 3000
+                })
+                showModalLogin();
+                username.value = "";
+                email.value = "";
+                password.value = "";
+                confirmPassword.value = "";
+                form.getElementsByClassName("error")[0].style.color = "#fff";
             }
-            else {
-                alert("Mật khẩu không khớp.")
-                confirmPassword.value = ""
-                confirmPassword.focus()
+            else if (username.value == checkUser.username) {
+                toast({
+                    title: 'Cảnh bảo!',
+                    message: 'Tài khoản có người đăng ký!',
+                    type: 'warning',
+                    duration: 3000
+                })
+                username.value = ""
+                username.focus()
             }
         }
-
-    }
-    else {
-
     }
 }
 
@@ -310,33 +305,41 @@ function logIn() {
 
     if (logInUsername.value != "" && logInPassword.value != "") {
         if (checkUser == null) {
-            alert("Chưa có tài khoản.")
+            toast({
+                title: 'Cảnh báo!',
+                message: 'Bạn chưa đăng ký tài khoản! Mời bạn đăng ký.',
+                type: 'warning',
+                duration: 3000
+            })
         }
         else {
             if (logInUsername.value == 'admin' && logInPassword.value == '12345678') {
-                alert("Đăng nhập admin thành công.")
                 hindeModalLogin();
                 localStorage.setItem("Now", logInUsername.value);
                 localStorage.setItem('sessionID', generateToken());
                 localStorage.setItem('sessionUser', checkUser.username);
+                logInUsername = '';
+                logInPassword = '';
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else if (logInUsername.value == checkUser.username && logInPassword.value == checkUser.password) {
-                alert("Đăng nhập thành công.")
                 location.reload();
                 hindeModalLogin();
                 localStorage.setItem("Now", logInUsername.value);
                 localStorage.setItem('sessionID', generateToken());
                 localStorage.setItem('sessionUser', checkUser.username);
+                logInUsername = '';
+                logInPassword = '';
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else {
-                if (!(logInUsername.value == checkUser.email)) {
-                    alert("Bạn nhập chưa đúng gmail...")
-                    logInUsername.focus();
-                }
-                else if (!(logInPassword.value == checkUser.password)) {
-                    alert("Bạn nhập chưa đúng password...")
+                if(!(logInPassword.value == checkUser.password)) {
+                    toast({
+                        title: 'Cảnh báo!',
+                        message: 'Password chưa đúng!',
+                        type: 'warning',
+                        duration: 3000
+                    })
                     logInPassword.focus();
                 }
             }
@@ -345,15 +348,30 @@ function logIn() {
 
     else {
         if (logInUsername.value == "" && logInPassword.value == "") {
-            alert("Bạn chưa nhập gmail và password...")
+            toast({
+                title: 'Cảnh báo!',
+                message: 'Bạn chưa nhập username và password!',
+                type: 'warning',
+                duration: 3000
+            })
             logInUsername.focus();
         }
         else if (logInUsername.value == "") {
-            alert("Chưa nhập gmail.")
+            toast({
+                title: 'Cảnh báo!',
+                message: 'Bạn chưa nhập username!',
+                type: 'warning',
+                duration: 3000
+            })
             logInUsername.focus();
         }
         else if (logInPassword.value == "") {
-            alert("Chưa nhập password.")
+            toast({
+                title: 'Cảnh báo!',
+                message: 'Bạn chưa nhập password!',
+                type: 'warning',
+                duration: 3000
+            })
             logInPassword.focus();
         }
     }
@@ -399,6 +417,9 @@ function logOut() {
     localStorage.removeItem('sessionUser');
     localStorage.removeItem('Now');
     localStorage.removeItem("ContentCart")
+    for (var i = 1; i < window.history.length; i++) {
+        history.back()
+    }
     window.location.href = 'http://127.0.0.1:5500/';
 }
 btnLogout.addEventListener('click', logOut);
@@ -408,10 +429,6 @@ btnLogout.addEventListener('click', logOut);
 //thay doi content
 var btnPageProducts = document.querySelectorAll('.js-page-description-product');
 const btnContent = document.querySelector('.js-change-content');
-
-
-
-
 
 //z-index cho deader
 const changeHeader = document.querySelector('.header-top');
@@ -708,6 +725,54 @@ overlayMenu.addEventListener('click', function () {
 // end modal mini
 
 
+function toast({
+    title = '',
+    message = '',
+    type = 'info',
+    duration = 3000
+}) {
+    const main = document.getElementById('toast');
+    if (main) {
+        const toast = document.createElement('div');
+
+        const autoRemove = setTimeout(function () {
+            main.removeChild(toast);
+        }, duration + 1000);
+
+        toast.onclick = function (e) {
+            if (e.target.closest('.toast__close')) {
+                main.removeChild(toast);
+                clearTimeout(autoRemove);
+            }
+        }
+        const icons = {
+            success: 'fa-solid fa-circle-check',
+            info: 'fa-solid fa-circle-info',
+            warning: 'fa-solid fa-circle-exclamation'
+        }
+        const icon = icons[type];
+        const delay = (duration / 1000).toFixed(2);
+        toast.classList.add('toast', `toast--${type}`);
+        toast.style.animation = `slideInleft ease .6s, fadeOut linear 1s ${delay}s forwards`;
+
+        toast.innerHTML = `
+                <div class="toast__icon">
+                    <i class="${icon}"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">${title}</h3>
+                    <p class="toast__msg">${message}</p>
+                </div>
+                <div class="toast__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            `;
+        main.appendChild(toast);
+
+    }
+}
+
+
 function pageDescriptionProduct(valueTitleProduct, srcImageProduct, descriptionProduct, priceProduct) {
 
     btnContent.innerHTML = `<div class="product-description-wrap ">
@@ -874,7 +939,12 @@ function add_to_cart(title, img, price) {
     var cart_dropdown_title = cart_dropdown_list.getElementsByClassName("cart-dropdown-title")
     for (var i = 0; i < cart_dropdown_title.length; i++) {
         if (cart_dropdown_title[i].innerText == title) {
-            alert("Sản phẩm đã có trong giỏ hàng.")
+            toast({
+                title: 'Thông báo!',
+                message: 'Sản phẩm này đã có trong giỏ hàng!',
+                type: 'warning',
+                duration: 4000
+            })
             return
         }
     }
@@ -977,7 +1047,12 @@ function buy() {
     var cart_dropdown_list = document.getElementsByClassName("cart-dropdown-list")[0]
     var now = localStorage.getItem("Now")
     if (cart_dropdown_list.innerText == "") {
-        alert("Gio hang trong")
+        toast({
+            title: 'Thông báo!',
+            message: 'Giỏ hàng trống. Vui lòng thêm sản phẩm!',
+            type: 'warning',
+            duration: 3000
+        })
     }
     else if (localStorage.getItem("Now")) {
         localStorage.removeItem("ContentCart")
@@ -1028,13 +1103,17 @@ function buy() {
 
         var sanpham = JSON.stringify(SanPhamDaMua)
         localStorage.setItem("SanPhamDaMua", sanpham)
-        alert("Thank you")
+        toast({
+            title: 'Thành công!',
+            message: 'Bạn đã mua hàng thành công !',
+            type: 'success',
+            duration: 3000
+        })
         cart_dropdown_list.innerHTML = ""
         updateTotal()
         update()
     }
     else {
-        alert("moi dang nhap")
         showModalLogin();
         return
     }

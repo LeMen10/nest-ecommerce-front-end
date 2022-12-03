@@ -116,12 +116,16 @@
     .icon-logo{
         display: none;
     }
+
     .header-top-wrapper .icon-navbar{
         display: block;
         font-size: 22px;
         color: #1a3e4e;
         padding: 4px 8px;
         margin: 0 84px 0 2px;
+    }
+    .header-top-wrapper .icon-navbar:hover{
+        cursor: pointer;
     }
     .header-top-mid{
         width: 50%;
@@ -194,12 +198,16 @@
     .icon-logo{
         display: none;
     }
+
     .header-top-wrapper .icon-navbar{
         display: block;
         font-size: 22px;
         color: #1a3e4e;
         padding: 4px 16px;
         /* margin: 0 40px 0 2px; */
+    }
+    .header-top-wrapper .icon-navbar:hover{
+        cursor: pointer;
     }
     .input-search-wrap{
         min-height: 46px;
@@ -231,8 +239,8 @@
         margin-left: 56px;
         margin-right: 0;
         transform: translateY(0);
-        width: 25%;
-        margin-left: 20px;
+        width: 22%;
+        margin-left: 28px;
         margin-right: -12px;
     }
     .categories-shop-wrap{
