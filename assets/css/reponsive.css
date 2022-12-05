@@ -78,12 +78,16 @@
     .heart-wrap{
         display: none;
     }
+    .featured-categories{
+        display: none;
+    }
     .categories-shop-wrap{
         display: none;
     }
     .categories-product{
         width: 100%;
     }
+
     /* about */
     .about-shop-wrap .container{
         max-width: 960px;
@@ -95,7 +99,76 @@
     .our-team-info{
         top: 83%;
     }
-
+    /* contact */ /* Tân Minh làm*/
+    .col-first-body_main{
+        flex: 0 0 auto;
+        width: 80%;
+    } 
+    .item_frist-body{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .item_first{
+        flex: 0 0 auto;
+        width: 33,3333%;
+    } 
+    .last_main-item{
+        flex: 0 0 auto;
+        width: 50%;
+         
+    } 
+    .info_Contact-from{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .img-map{
+        width: 1000px;
+    }
+    /*Tân Minh làm*/
+    .footer-img__background {
+        width: 100%;
+        height: 100%;
+    }
+    /*Tân Minh làm*/
+    .footer-img__content{
+        width: 0%;
+        height: 0%;
+    }
+    /*Tân Minh làm*/
+    .footer-img__text {
+        font-size: 2rem;
+        left: 84px;
+        top: 210px;
+    }
+    /*Tân Minh làm*/
+    .footer-img__title {
+        font-size: 4rem;
+    }
+    /*Tân Minh làm*/
+    .footer-img__control {
+        width: 50%;
+    }
+    /*Tân Minh làm*/
+    .footer-control__submit {
+        right: 50%;
+        padding: 24px 50px;
+    }
+    /*Tân Minh làm*/
+    .footer-body__item{
+        flex: 0 0 auto;
+        width: 33.33333%; 
+    }
+    /*Tân Minh làm*/
+    .footer-feature__link{
+        flex: 0 0 auto;
+        width: 33.33333%;
+    }
+    /*Tân Minh làm*/
+    .footer-last__info{
+        flex: 0 0 auto;
+        width: 50%;
+        left: 0; 
+    }
 }
 @media(min-width: 576px) and (max-width: 740px) {
     .col-6{
@@ -158,6 +231,10 @@
     .heart-wrap{
         display: none;
     }
+
+    .featured-categories{
+        display: none;
+    }
     .categories-shop-wrap{
         display: none;
     }
@@ -177,6 +254,78 @@
     }
     .our-team-img:nth-child(2){
         margin-top: 80px;
+    }
+
+    /* contact */
+    /*Tân Minh làm*/
+    .col-first-body_main{
+        flex: 0 0 auto;
+        width: 100%;
+    }  
+    .item_first{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .last_main-item{
+        flex: 0 0 auto;
+        width: 50%;
+         
+    } 
+    .info_Contact-from{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .from_Contact{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .img-map{
+        width: 750px;
+    } 
+    /*Tân Minh làm*/
+    .footer-img__background {
+        width: 100%;
+        height: 100%;
+    }
+    /*Tân Minh làm*/
+    .footer-img__content{
+        width: 0%;
+        height: 0%;
+    }
+    /*Tân Minh làm*/
+    .footer-img__text {
+        font-size: 2rem;
+        left: 84px;
+        top: 210px;
+    }
+    /*Tân Minh làm*/
+    .footer-img__title {
+        font-size: 3rem;
+    }
+    /*Tân Minh làm*/
+    .footer-img__control {
+        width: 80%;
+    }
+    /*Tân Minh làm*/
+    .footer-control__submit {
+        right: 50%;
+        padding: 20px 40px;
+    }
+    /*Tân Minh làm*/
+    .footer-body__item{
+        flex: 0 0 auto;
+        width: 50%; 
+    }
+    /*Tân Minh làm*/
+    .footer-feature__link{
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    /*Tân Minh làm*/
+    .footer-last__info{
+        flex: 0 0 auto;
+        width: 100%;
+        left: 0; 
     }
 }
 @media (max-width: 576px) {
@@ -243,6 +392,11 @@
         margin-left: 28px;
         margin-right: -12px;
     }
+
+    .featured-categories{
+        display: none;
+    }
+
     .categories-shop-wrap{
         display: none;
     }
@@ -281,6 +435,77 @@
     }
     .our-team-img:nth-child(2){
         margin-top: 80px;
+    }
+
+    /* contact *//*Tân Minh làm*/
+    .col-first-body_main{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .item_first{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .last_main-item{
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center; 
+    } 
+    .info_Contact-from{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .from_Contact{
+        flex: 0 0 auto;
+        width: 100%;
+    } 
+    .img-map{
+        width: 550px;
+    }
+    /*Tân Minh làm*/
+    .footer-img__background {
+        width: 100%;
+        height: 100%;
+    }
+    /*Tân Minh làm*/
+    .footer-img__content{
+        width: 0%;
+        height: 0%;
+    }
+    /*Tân Minh làm*/
+    .footer-img__text {
+        font-size: 2rem;
+        left: 84px;
+        top: 210px;
+    }
+    /*Tân Minh làm*/
+    .footer-img__title {
+        font-size: 2.5rem;
+    }
+    /*Tân Minh làm*/
+    .footer-img__control {
+        width: 80%;
+    }
+    /*Tân Minh làm*/
+    .footer-control__submit {
+        right: 50%;
+        padding: 0px 10px;
+    }
+    /*Tân Minh làm*/
+    .footer-body__item{
+        flex: 0 0 auto;
+        width: 50%; 
+    }
+    /*Tân Minh làm*/
+    .footer-feature__link{
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    /*Tân Minh làm*/
+    .footer-last__info{
+        flex: 0 0 auto;
+        width: 100%;
+        left: 0; 
     }
 }
 

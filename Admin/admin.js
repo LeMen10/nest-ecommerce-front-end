@@ -7,6 +7,11 @@ if (localStorage.getItem("TaiKhoanDangKy")) {
     }
 }
 
+var logOut = document.getElementsByClassName("menu-footer")[0]
+logOut.addEventListener("click", function () {
+    history.back()
+})
+
 //do rong menu
 var menu = document.getElementsByClassName("menu")[0]
 var btn = document.getElementsByClassName("open-close")[0]
@@ -63,12 +68,7 @@ mode_button.addEventListener("click", function () {
         localStorage.setItem("mode", check)
     }
 })
-//logout
-var logOut = document.getElementsByClassName("menu-footer")[0]
-logOut.addEventListener("click", function () {
-    
-    window.location.href = "../index.html"
-})
+
 
 //function danh sach
 

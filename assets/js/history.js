@@ -1,6 +1,6 @@
 const innerHistory = document.getElementsByClassName("history-container")[0]
 const modalContainerHistory = document.querySelector('.js-modal-container-history')
-const title_page = document.getElementsByClassName("title-page")[0]
+const title_page = document.getElementsByClassName("title-page")[1]
 const SanPhamDaMua = []
 if(localStorage.getItem("SanPhamDaMua")){
     var SanPhamKhachHang = localStorage.getItem("SanPhamDaMua")

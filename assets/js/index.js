@@ -1,7 +1,7 @@
-// import generateToken from "./tool.js";
 function generateToken() {
     return (Math.random() + 1).toString(36).substring(7);
 }
+
 // slider
 function sliderHome() {
     var count = 1;
@@ -14,7 +14,7 @@ function sliderHome() {
                 count = 1;
             }
         }
-    }, 3000);
+    }, 5000);
 }
 
 const btnComeBackPageHomes = document.querySelectorAll('.js-page-home');
@@ -25,7 +25,17 @@ function openPageHome() {
         })
     }
 }
+
+var valueProductData = localStorage.getItem("PRODUCTDATA");
+const arrProductData = JSON.parse(valueProductData)
+
+const container__loading = document.querySelector('.container__loading')
+function hide__loading() {
+    container__loading.style.display = "none"
+}
 window.onload = function () {
+    container__loading.style.display = "flex"
+    setTimeout(hide__loading, 500)
     var newAdmin = {
         username: 'admin',
         password: '12345678',
@@ -107,6 +117,7 @@ const modalContainerLogin = document.querySelector('.js-modal-container-login')
 function showModalLogin() {
     modalRegister.classList.remove('open-modal-register');
     modalLogin.classList.add('open-modal-login');
+    modalQuen.classList.remove('open-modal-quen')
 }
 function hindeModalLogin() {
     modalLogin.classList.remove('open-modal-login');
@@ -117,11 +128,6 @@ modalLogin.addEventListener('click', hindeModalLogin);
 modalContainerLogin.addEventListener('click', function (e) {
     e.stopPropagation();
 })
-
-
-function checkInputPassWord() {
-    alert("Nhập password đủ 8 ký tự...");
-}
 
 var formRegister = document.querySelector('#form-register');
 const Taikhoan_Dangky = [];
@@ -168,14 +174,14 @@ username.addEventListener("keyup", function () {
     var form = username.parentElement
     var user_value = username.value
     var error = form.getElementsByClassName("error")[0]
-    var check = /^[a-zA-Z0-9\-]{6,12}$/
+    var check = /^[a-zA-Z0-9\-]{6,8}$/
     if (user_value.match(check)) {
         error.innerHTML = "Username hợp lệ"
         error.style.color = "green"
         kiemtra1 = true
     }
     else {
-        error.innerHTML = "Username có 6-12 ký tự, không chứa khoảng trắng và dấu."
+        error.innerHTML = "Username có 6-8 ký tự, không chứa khoảng trắng và dấu."
         error.style.color = "red"
         kiemtra1 = false
     }
@@ -215,7 +221,7 @@ confirmPassword.addEventListener("keyup", function () {
     var pass2_value = confirmPassword.value
     var pass_value = password.value
     var error = form.getElementsByClassName("error")[0]
-    var check = /^[a-zA-Z0-9\-]{1,12}$/
+    var check = /^[a-zA-Z0-9\-]{8,12}$/
     if (pass2_value != pass_value) {
         error.innerHTML = "Mật khẩu xác nhận không đúng"
         error.style.color = "red"
@@ -297,16 +303,32 @@ function register() {
 var formLogin = document.querySelector('#form-login');
 let isLogin = !!localStorage.getItem("Now");
 
+var logInUsername = document.getElementById("auth-form__user-login");
+var logInPassword = document.getElementById("auth-form__password-login");
+
+
+    logInUsername.addEventListener('keydown', function (e) {
+        if (e.keyCode == 13) {
+            logIn();
+        }
+    })
+    
+    logInPassword.addEventListener('keydown', function (e) {
+        if (e.keyCode == 13) {
+            logIn();
+        }
+    })
+
+
 function logIn() {
-    var logInUsername = document.getElementById("auth-form__user-login")
-    var logInPassword = document.getElementById("auth-form__password-login")
+    
     var user = localStorage.getItem(logInUsername.value)
     var checkUser = JSON.parse(user);
 
     if (logInUsername.value != "" && logInPassword.value != "") {
         if (checkUser == null) {
             toast({
-                title: 'Cảnh báo!',
+                title: 'Thông báo!',
                 message: 'Bạn chưa đăng ký tài khoản! Mời bạn đăng ký.',
                 type: 'warning',
                 duration: 3000
@@ -323,7 +345,7 @@ function logIn() {
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else if (logInUsername.value == checkUser.username && logInPassword.value == checkUser.password) {
-                location.reload();
+                // location.reload();
                 hindeModalLogin();
                 localStorage.setItem("Now", logInUsername.value);
                 localStorage.setItem('sessionID', generateToken());
@@ -333,9 +355,9 @@ function logIn() {
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else {
-                if(!(logInPassword.value == checkUser.password)) {
+                if (!(logInPassword.value == checkUser.password)) {
                     toast({
-                        title: 'Cảnh báo!',
+                        title: 'Thông báo!',
                         message: 'Password chưa đúng!',
                         type: 'warning',
                         duration: 3000
@@ -349,7 +371,7 @@ function logIn() {
     else {
         if (logInUsername.value == "" && logInPassword.value == "") {
             toast({
-                title: 'Cảnh báo!',
+                title: 'Thông báo!',
                 message: 'Bạn chưa nhập username và password!',
                 type: 'warning',
                 duration: 3000
@@ -358,7 +380,7 @@ function logIn() {
         }
         else if (logInUsername.value == "") {
             toast({
-                title: 'Cảnh báo!',
+                title: 'Thông báo!',
                 message: 'Bạn chưa nhập username!',
                 type: 'warning',
                 duration: 3000
@@ -367,7 +389,7 @@ function logIn() {
         }
         else if (logInPassword.value == "") {
             toast({
-                title: 'Cảnh báo!',
+                title: 'Thông báo!',
                 message: 'Bạn chưa nhập password!',
                 type: 'warning',
                 duration: 3000
@@ -407,23 +429,254 @@ if (localStorage.getItem("Now") != "admin") {
 }
 //end thay đổi icon user
 
+// quen mat khau
+const quenBtns = document.querySelectorAll('.auth-form__help-forgot')
+const modalCloseQuen = document.querySelector('.js-modal-close-quen')
+const modalContainerQuen = document.querySelector('.js-modal-container-quen')
+const modalQuen = document.querySelector('.js-modal-quen')
+const email_quen = document.getElementById("email-quen")
+const user_quen = document.getElementById("user-quen")
+const pass_quen = document.getElementById("pass-quen")
+pass_quen.parentElement.style.display = "none"
+const pass2_quen = document.getElementById("pass2-quen")
+pass2_quen.parentElement.style.display = "none"
+const code_quen = document.getElementById("code-quen")
+code_quen.parentElement.style.display = "none"
+const xacnhan1 = document.getElementById("xacnhan")
+xacnhan1.style.display = "none"
+user_quen.addEventListener("keyup", function () {
+    if (user_quen.value != "") {
+        user_quen.parentElement.getElementsByClassName("error")[0].innerHTML = ""
+    }
+    else {
+        user_quen.parentElement.getElementsByClassName("error")[0].innerHTML = ""
+    }
+})
+email_quen.addEventListener("keyup", function () {
+    if (email_quen.value != "") {
+        email_quen.parentElement.getElementsByClassName("error")[0].innerHTML = ""
+    }
+    else {
+        email_quen.parentElement.getElementsByClassName("error")[0].innerHTML = ""
+    }
+})
+
+code_quen.addEventListener("keyup", function () {
+    if (code_quen.value != "") {
+        code_quen.parentElement.getElementsByClassName("error")[0].innerHTML = ""
+    }
+    else {
+        code_quen.parentElement.getElementsByClassName("error")[0].innerHTML = ""
+    }
+})
+pass_quen.addEventListener("keyup", function () {
+    var form = pass_quen.parentElement
+    var pass_value = pass_quen.value
+    var error = form.getElementsByClassName("error")[0]
+    var check = /^[a-zA-Z0-9\-]{8,12}$/
+    if (pass_value.match(check)) {
+        error.innerHTML = "Mật khẩu hợp lệ"
+        error.style.color = "green"
+        kiemtra = true
+    }
+    else {
+        error.innerHTML = "Mật khẩu không hợp lệ. Mật khẩu chứa 8-12 ký tự,không chứa khoảng trắng"
+        error.style.color = "red"
+        kiemtra = false
+    }
+
+    if (pass_value == "") {
+        error.innerHTML = ""
+        error.style.color = "#fff"
+        kiemtra = false
+    }
+})
+pass2_quen.addEventListener("keyup", function () {
+    var form = pass2_quen.parentElement
+    var pass2_value = pass2_quen.value
+    var pass_value = pass_quen.value
+    var error = form.getElementsByClassName("error")[0]
+    var check = /^[a-zA-Z0-9\-]{8,12}$/
+    if (pass2_value != pass_value) {
+        error.innerHTML = "Mật khẩu xác nhận không đúng"
+        error.style.color = "red"
+        kiemtra = false
+    }
+    else {
+        error.innerHTML = "Mật khẩu xác nhận hợp lệ"
+        error.style.color = "green"
+        kiemtra = true
+    }
+    if (pass2_value == "") {
+        error.innerHTML = ""
+        error.style.color = "#fff"
+        kiemtra = false
+    }
+})
+
+
+
+
+const nhap_xac_nhan = document.getElementById("nhapnhap")
+let code_quen_rand
+
+function xacnhan() {
+    if (email_quen.value == "") {
+        var error = email_quen.parentElement.getElementsByClassName("error")[0]
+        error.innerHTML = "Chưa nhập email"
+        error.style.color = "red"
+    }
+    if (user_quen.value == "") {
+        var error = user_quen.parentElement.getElementsByClassName("error")[0]
+        error.innerHTML = "Chưa nhập username"
+        error.style.color = "red"
+    }
+
+    if (email_quen.value != "" && user_quen.value != "") {
+        var user = localStorage.getItem(user_quen.value)
+        var data = JSON.parse(user)
+        if (user == null) {
+            alert("Không tìm thấy tài khoản này")
+            pass_quen.value = ""
+            pass2_quen.value = ""
+            code_quen.value = ""
+        }
+        else if (user_quen.value != data.username || email_quen.value != data.email) {
+            alert("Email hoặc Username không đúng")
+            user_quen.value = ""
+            email_quen.value = ""
+        }
+        else {
+            const randString = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+            const getRandomInt = (min, max) => {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            const getRandomString = (length, base) => {
+                let result = "";
+                const baseLength = base.length;
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = getRandomInt(0, baseLength);
+                    result += base[randomIndex];
+                }
+                return result;
+            }
+
+            code_quen_rand = `${getRandomString(6, randString)}`
+            console.log(code_quen_rand)
+            nhap_xac_nhan.style.display = "none"
+            pass_quen.parentElement.style.display = "block"
+            pass2_quen.parentElement.style.display = "block"
+            code_quen.parentElement.style.display = "block"
+            xacnhan1.style.display = "block"
+        }
+    }
+}
+
+function quen() {
+    if (pass_quen.value == "") {
+        var error = pass_quen.parentElement.getElementsByClassName("error")[0]
+        error.innerHTML = "Chưa nhập mật khẩu mới"
+        error.style.color = "red"
+    }
+
+    if (pass2_quen.value == "") {
+        var error = pass2_quen.parentElement.getElementsByClassName("error")[0]
+        error.innerHTML = "Chưa nhập mật khẩu xác nhận"
+        error.style.color = "red"
+    }
+
+    if (code_quen.value == "") {
+        var error = code_quen.parentElement.getElementsByClassName("error")[0]
+        error.innerHTML = "Chưa nhập mã code"
+        error.style.color = "red"
+    }
+    if (pass_quen.value != "" && pass2_quen != "" && code_quen != "" && kiemtra == true) {
+        if (code_quen.value == code_quen_rand) {
+            var user = {
+                email: email_quen.value,
+                username: user_quen.value,
+                password: pass_quen.value
+            }
+            var json = JSON.stringify(user)
+            localStorage.setItem(user_quen.value, json)
+            toast({
+                title: 'Thành công!',
+                message: 'Bạn đã đổi mật khẩu thành công!',
+                type: 'success',
+                duration: 3000
+            })
+            hideModalQuen()
+            nhap_xac_nhan.style.display = "block"
+            xacnhan1.style.display = "none"
+            user_quen.value = ""
+            email_quen.value = ""
+            pass_quen.value = ""
+            pass2_quen.value = ""
+            code_quen.value = ""
+            pass_quen.parentElement.style.display = "none"
+            pass2_quen.parentElement.style.display = "none"
+            code_quen.parentElement.style.display = "none"
+        }
+        else {
+            alert("Code sai vui lòng xem console")
+            code_quen.value = ""
+            code_quen.focus()
+        }
+    }
+
+}
+
+function showModalQuen() {
+    modalLogin.classList.remove('open-modal-login');
+    modalQuen.classList.add('open-modal-quen')
+}
+function hideModalQuen() {
+    modalQuen.classList.remove('open-modal-quen')
+    nhap_xac_nhan.style.display = "block"
+    pass_quen.parentElement.style.display = "none"
+    pass2_quen.parentElement.style.display = "none"
+    code_quen.parentElement.style.display = "none"
+    xacnhan1.style.display = "none"
+    user_quen.value = ""
+    pass_quen.value = ""
+    pass2_quen.value = ""
+    code_quen.value = ""
+    email_quen.value = ""
+}
+
+for (const quenBtn of quenBtns) {
+    quenBtn.addEventListener('click', showModalQuen);
+}
+
+modalCloseQuen.addEventListener("click", hideModalQuen)
+modalQuen.addEventListener("click", hideModalQuen)
+modalContainerQuen.addEventListener("click", function (e) {
+    e.stopPropagation();
+})
 
 //log out
 const btnLogout = document.querySelector('.js-log-out');
+let historyLength = history.length
 function logOut() {
-    location.reload();
     localStorage.removeItem("pageShop");
     localStorage.removeItem('sessionID');
     localStorage.removeItem('sessionUser');
     localStorage.removeItem('Now');
     localStorage.removeItem("ContentCart")
-    for (var i = 1; i < window.history.length; i++) {
-        history.back()
+    for (var i = 0; i < historyLength; i++) {
+        event.preventDefault()
+        history.go(-1)
     }
-    window.location.href = 'http://127.0.0.1:5500/';
 }
 btnLogout.addEventListener('click', logOut);
 //end log out
+
+//toTop
+const totop = document.querySelector('.toTop')
+totop.addEventListener("click", toHeader)
+function toHeader() {
+    window.scrollTo(0, 0)
+}
 
 
 //thay doi content
@@ -446,130 +699,81 @@ window.addEventListener('scroll', scrolled);
 var productLists = document.querySelector('.js-product-lists');
 
 
-function getRenderProducts(products, category, search, pageNum) {
-    var resultProducts = []
-
-    // console.log(products)
-    if (!category && !search && !pageNum) {
-        return products
-    }
-
-    var stringFilter = ""
-    if (category) {
-        stringFilter += "item.category == category";
-        // stringFilter += "(item.category == category) ? item.category == category : category.toLowerCase().includes(item.category)"
-    }
-    if (search) {
-        stringFilter += (stringFilter ? "&&" : "") + "item.title.toLowerCase().includes(search)"
-    }
-    if (pageNum) {
-        stringFilter += "(pageNum > 0 && pageNum <2) ? item.id <= (pageNum*8) : ((item.id > (pageNum-1)*8) && (item.id <= (pageNum*8)))";
-    }
-    if (stringFilter) {
-        products.forEach((item) => {
-            if (eval(stringFilter)) {
-                resultProducts.push(item)
-            }
-        })
-
-        return resultProducts
-    }
-    else {
-        return products
-    }
-}
-var data = '';
-function renderProductLists(category, search, pageNum) {
-    if (data === '') {
-        const resultProducts = getRenderProducts(PRODUCTDATA, category, search, pageNum);
-        resultProducts.forEach((item) => {
-            if (item) {
-                data += `<div class="col col-3 col-4 col-6 col-12 mb-24">
-                <div class="popular-product-cart-wrap js-page-description-product" onclick="pageDescription()">
-                    <div class="product-card-header">
-                        <img class="js-product-cart-src img-product-box" src="${item.img}"
-                            alt="">
-                    </div>
-
-                    <div class="product-cart-content">
-                        <a class="product-cart-title js-product-cart-title" >${item.title}</a>
-                        <p class="product-cart-description">${item.description}</p>
-                        <div class="product-card-bottom">
-                            <span class="js-product-cart-price current-price">$${item.price}</span>
-                            <div class="add-cart" onclick="addCartPageShop(event)">
-                                <a class="btn">Add</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`
-            }
-        })
-        productLists.innerHTML = data;
-
-    }
-
-}
-// console.log(btnPageProducts)
-
-
 const getNameOfParam = window.location.href.split("?");
-
-function checkValueParam() {
-
-    if (getNameOfParam[1]) {
-        var data = getNameOfParam[1];
-        var cateId;
-
-        if (data.includes("pageNum")) {
-            cateId = getNameOfParam[1].split('=');
-            if (cateId) {
-                renderProductLists('', '', cateId[1]);
-            }
-        }
-
-        if (!data.includes("&")) {
-
-            cateId = getNameOfParam[1].split('=');
-            if (cateId[0] === 'cate_id') {
-                renderProductLists(cateId[1]);
-            }
-            else if (cateId[0] === 'search') {
-                renderProductLists('', cateId[1], '');
-            }
-        }
-        else if (data.includes("&")) {
-            cateId = getNameOfParam[1].split('&');
-            renderProductLists((cateId[0].split('='))[1], (cateId[1].split('='))[1])
-        }
-    }
-
-}
-
 const pageController = document.querySelector('.js-page-controller');
 var pageNum = '';
-function renderPageNumber(resultProducts) {
+function renderPageNumber(resultFilter) {
     if (pageNum === '') {
-        if (resultProducts) {
-            for (var i = 0; i < (resultProducts.length) / 8; i++) {
+        if (resultFilter) {
+            for (var i = 1; i < ((resultFilter.length) / 8) + 1; i++) {
                 pageNum += `<li class="pagination-item js-active">
-                                <a class="js-load-page-shop" href="/index.html?pageNum=${i + 1}" >${i + 1}</a>
+                                <a class="js-load-page-shop" onclick="changePage()" >${i}</a>
                             </li>
                         `
             }
         }
-        for (var i = 0; i < (PRODUCTDATA.length) / 8; i++) {
-            pageNum += `<li class="pagination-item js-active">
-                    <a class="js-load-page-shop" href="/index.html?pageNum=${i + 1}" >${i + 1}</a>
-                </li>
-            `
-        }
-
-        pageController.innerHTML = pageNum;
     }
+    pageController.innerHTML = pageNum;
+    pageNum = ''
+}
+function renderPageNumberSearch(resultFilter) {
+    if (pageNum === '') {
+        if (resultFilter) {
+            for (var i = 1; i < ((resultFilter.length) / 8) + 1; i++) {
+                pageNum += `<li class="pagination-item js-active">
+                                <a class="js-load-page-shop" onclick="changePageSearch()" >${i}</a>
+                            </li>
+                        `
+            }
+        }
+    }
+    pageController.innerHTML = pageNum;
+    pageNum = ''
+}
+const dataSearch = document.querySelector('.js-search-product');
+
+function changePageSearch() {
+    window.scrollTo(0, 0)
+    var resultProducts = [];
+    const numberPage = event.target.innerText;
+    var resultSearch = searchProduct();
+    var length = resultSearch.length;
+    if (resultSearch.length != 0) {
+        for (var i = 0; i < length; i++) {
+            if (numberPage == 1) {
+                if (i < 8) {
+                    resultProducts.push(resultSearch[i]);
+                }
+            }
+            else {
+                if (((i >= (numberPage - 1) * 8) && (i <= (numberPage * 8)))) {
+                    resultProducts.push(resultSearch[i]);
+                }
+            }
+        }
+    }
+    renderProductFilter(resultProducts);
 }
 
+function changePage() {
+    window.scrollTo(0, 0)
+    var resultProducts = [];
+    const numberPage = event.target.innerText;
+    arrProductData.forEach(item => {
+        if (numberPage == 1) {
+            if (item.id <= 8) {
+                resultProducts.push(item);
+            }
+        }
+        else {
+            if (((item.id > (numberPage - 1) * 8) && (item.id <= (numberPage * 8)))) {
+                resultProducts.push(item);
+            }
+        }
+    })
+    renderProductFilter(resultProducts);
 
+}
 const titleProductList = document.querySelector('.title-product-list');
 var s1 = '';
 function renderCategory() {
@@ -578,16 +782,29 @@ function renderCategory() {
             s1 += `<li class="title-product-item">
                     <div class="product-item">
                         <img src="${item.img}" alt="">
-                        <a href="?${item.key}=${item.name}">${item.title}</a>
-
+                        <a  class="render-by-category" onclick="renderByCategory()">${item.title}</a>
                     </div>
                 <div class="count-product">${item.count}</div>
             </li>`
         })
         titleProductList.innerHTML = s1;
     }
-
 }
+
+function renderByCategory() {
+    window.scrollTo(0, 0)
+    var resultFilter = [];
+    var elementCategory = event.target
+    var nameCategory = elementCategory.innerText.toLowerCase().replace(/\s/g, '');
+    arrProductData.forEach((item) => {
+        if (nameCategory.includes(item.category)) {
+            resultFilter.push(item);
+        }
+    })
+    renderProductFilter(resultFilter);
+    renderPageNumber(resultFilter);
+}
+
 
 const btnPageShops = document.querySelectorAll('.js-page-shop');
 const btnOpenPageShop = document.querySelector('.js-open-page-shop');
@@ -601,23 +818,22 @@ function openPageShop() {
     btnOpenPageAbout.classList.remove('open-page');
     btnOpenPageShop.classList.add('open-page');
     window.scrollTo(0, 0);
-    checkValueParam();
     renderPageNumber();
     renderCategory();
 }
 for (const btnPageShop of btnPageShops) {
-    btnPageShop.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.history.replaceState(null, null, "?pageShop");
-        localStorage.setItem('pageShop', 'pageShop');
+    btnPageShop.addEventListener('click', function () {
+        var resultFilter = [];
         openPageShop();
-        renderProductLists('', '', 1);
-    })
+        for (var i = 0; i < 8; i++) {
+            resultFilter.push(arrProductData[i]);
+        }
+        renderProductFilter(resultFilter);
+        renderPageNumber(arrProductData);
+    });
 }
 
-if (localStorage.getItem('pageShop')) {
-    openPageShop();
-}
+
 function openPageAbout() {
     btnContent.classList.add('close-content');
     btnOpenPageShop.classList.remove('open-page');
@@ -626,10 +842,7 @@ function openPageAbout() {
     window.scrollTo(0, 0);
 }
 for (const btnPageAbout of btnPageAbouts) {
-    btnPageAbout.addEventListener('click', function (e) {
-        window.history.replaceState(null, null, "?pageAbout");
-        localStorage.removeItem('pageShop');
-        e.preventDefault();
+    btnPageAbout.addEventListener('click', function () {
         openPageAbout();
     })
 }
@@ -644,10 +857,7 @@ function openPageContact() {
     window.scrollTo(0, 0);
 }
 for (const btnPageContact of btnPageContacts) {
-    btnPageContact.addEventListener('click', function (e) {
-        window.history.replaceState(null, null, "?pageContact");
-        localStorage.removeItem('pageShop');
-        e.preventDefault();
+    btnPageContact.addEventListener('click', function () {
         openPageContact();
     })
 }
@@ -662,28 +872,27 @@ if (!getNameOfParam[1]) {
 }
 
 //page about
-const dataSearch = document.querySelector('.js-search-product');
-const submitSearch = document.querySelector('.js-submit-search');
 
-
-submitSearch.addEventListener('click', function (e) {
+function searchProduct() {
+    var resultProducts = [];
     if (dataSearch.value != "") {
         localStorage.setItem('pageShop', 'pageShop');
-        window.history.replaceState(null, null, `?search=${dataSearch.value}`);
         openPageShop();
-    }
+        arrProductData.forEach(item => {
+            if (item.title.toLowerCase().includes(dataSearch.value)) {
+                resultProducts.push(item);
+            }
 
-});
+        })
+        renderPageNumberSearch(resultProducts)
+        renderProductFilter(resultProducts);
+    }
+    return resultProducts
+}
 
 dataSearch.addEventListener('keydown', function (e) {
     if (e.keyCode == 13) {
-        if (dataSearch.value != "") {
-            localStorage.setItem('pageShop', 'pageShop');
-            window.history.replaceState(null, null, `?search=${dataSearch.value}`);
-            openPageShop();
-            location.reload();
-        }
-
+        searchProduct();
     }
 })
 
@@ -725,6 +934,7 @@ overlayMenu.addEventListener('click', function () {
 // end modal mini
 
 
+//thông báo
 function toast({
     title = '',
     message = '',
@@ -771,6 +981,96 @@ function toast({
 
     }
 }
+
+var datafilter = '';
+function renderProductFilter(resultFilter) {
+    var dem = 0;
+    if (datafilter === '') {
+        resultFilter.forEach((item) => {
+            if (dem < 8) {
+                datafilter += `<div class="col col-3 col-4 col-6 col-12 mb-24">
+                <div class="popular-product-cart-wrap js-page-description-product" onclick="pageDescription()">
+                    <div class="product-card-header">
+                        <img class="js-product-cart-src img-product-box" src="${item.img}"
+                            alt="">
+                    </div>
+
+                    <div class="product-cart-content">
+                        <a class="product-cart-title js-product-cart-title" >${item.title}</a>
+                        <p class="product-cart-description">${item.detail}</p>
+                        <div class="product-card-bottom">
+                            <span class="js-product-cart-price current-price">$${item.price}</span>
+                            <div class="add-cart" onclick="addCartPageShop(event)">
+                                <a class="btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            }
+            dem++;
+        })
+        productLists.innerHTML = datafilter;
+        datafilter = '';
+    }
+
+}
+
+//lọc sản phẩm theo giá
+const elementFilter = document.querySelector('.js-filter-by-price');
+function filterByPrice() {
+    var resultFilter = [];
+
+    arrProductData.forEach(item => {
+        if (elementFilter.value == 1) {
+            if (item.price > 0 && item.price <= 20) {
+                resultFilter.push(item);
+                return resultFilter;
+            }
+        }
+        if (elementFilter.value == 2) {
+            if (item.price > 20 && item.price <= 40) {
+                resultFilter.push(item);
+                return resultFilter;
+            }
+        }
+        else if (elementFilter.value == 3) {
+            if (item.price > 40 && item.price <= 60) {
+                resultFilter.push(item);
+            }
+        }
+        else if (elementFilter.value == 4) {
+            if (item.price > 60 && item.price <= 80) {
+                resultFilter.push(item);
+            }
+        }
+        else if (elementFilter.value == 5) {
+            if (item.price > 80 && item.price <= 100) {
+                resultFilter.push(item);
+            }
+        }
+        else if (elementFilter.value == 6) {
+            if (item.price > 100) {
+                resultFilter.push(item);
+            }
+        }
+    })
+    renderProductFilter(resultFilter);
+    renderPageNumber(resultFilter);
+
+    if (elementFilter.value == 0) {
+        for (var i = 0; i < 8; i++) {
+            resultFilter.push(arrProductData[i]);
+        }
+        renderProductFilter(resultFilter);
+        renderPageNumber(arrProductData);
+    }
+
+}
+//end lọc
+
+
+
 
 
 function pageDescriptionProduct(valueTitleProduct, srcImageProduct, descriptionProduct, priceProduct) {
@@ -1119,3 +1419,18 @@ function buy() {
     }
 }
 
+
+window.addEventListener("scroll", load_animate)
+function load_animate() {
+    var load__animate = document.querySelectorAll('.load__animate')
+    for (var i = 0; i < load__animate.length; i++) {
+        var windowheigth = window.innerHeight
+        var load__animateTop = load__animate[i].getBoundingClientRect().top
+        if (load__animateTop < windowheigth) {
+            load__animate[i].classList.add('active__load')
+        }
+        else {
+            load__animate[i].classList.remove('active__load')
+        }
+    }
+}

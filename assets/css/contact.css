@@ -20,7 +20,7 @@
     background: none;
     margin: 0;
     border-radius: 0;
-}
+} 
 .icon_header-main_page{
     width: 15px;
     height: 15px;
@@ -32,8 +32,10 @@
 .Home:hover{
     color:  #3BB77E; 
 }
-
-.page-contact-wrap .row{
+.body-main_page{
+    padding-top: 50px !important;
+}
+.row{
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     display: flex;
@@ -58,9 +60,6 @@
     width: 33.3333333333%;
     margin-bottom: 0!important;
 }
-.col-first-body_main p{
-    font-size: 16px;
-}
 .item_frist-body{
     flex: 0 0 auto;
     width: 66.6666666667%;
@@ -75,8 +74,8 @@
     font-size: 48px;
     color: #253D4E;
 }
-.item_first p {
-    font-size: 16px;
+.content_first_main-page p {
+    font-size: 15px;
     font-weight: 400;
     line-height: 24px;
     margin-bottom: 5px;
@@ -109,9 +108,6 @@
     flex: 0 0 auto;
     width: 33.3333333333%;
     margin-bottom: 0;
-}
-.last_main-item p{
-    font-size: 16px;
 }
 .title-last_main-item{
     color: #3BB77E;
@@ -169,10 +165,7 @@
     margin-bottom: 20px;
     padding-right: 15px;
 }
-.input-style-odd{
-    padding-right: 0;
-}
-.page-contact-wrap input{
+.footer-img__control input{
     border: 1px solid #ececec;
     border-radius: 10px;
     height: 64px;
@@ -250,7 +243,6 @@ textarea{
     background-color: field;
     column-count: initial !important;
 }
-
 .btn-Messenge{
     font-size: 17px;
     font-weight: 500;
@@ -259,12 +251,9 @@ textarea{
     border: none;
     background-color: #253D4E;
     border-radius: 10px;
-    font-family: var(--font-family-quicksand);
-    transition: all .2s linear;
-
+    font-family: "Quicksand", sans-serif;
 }
 .btn-Messenge:hover{
-    cursor: pointer;
     background-color: #3BB77E;
 }
 .btn_View:hover{

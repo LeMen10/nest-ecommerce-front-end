@@ -222,6 +222,7 @@
     height: 32px;
     font-size: 12px;
 }
+.open-modal-quen,
 .open-modal-login,
 .open-modal-register{
     display: flex;

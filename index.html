@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/plugin/fontawesome/css/all.css">
     <link rel="stylesheet" href="assets/css/product-description.css">
     <link rel="stylesheet" href="assets/css/reponsive.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
     <!-- <link rel="stylesheet" href="assets/font/static/Quicksand-Medium.ttf"> -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Nest - Multipurpose eCommerce</title>
@@ -37,24 +38,25 @@
                             <div class="input-search-wrap">
                                 <input class="input-search js-search-product" type="search"
                                     placeholder="Search for items...">
-                                <a href="" class="icon-search-header js-submit-search">
-                                    <i class="fa-solid fa-magnifying-glass "></i></a>
+                                <button onclick="searchProduct()" class="icon-search-header js-submit-search">
+                                    <i class="fa-solid fa-magnifying-glass "></i>
+                                </button>
                             </div>
 
                             <div class="header-nav">
                                 <ul class="nav-list">
                                     <li class="nav-item ">
-                                        <a class="color-active nav-link  js-page-home" href="/">Home</a>
+                                        <a class="color-active nav-link nav-link-pc  js-page-home" href="">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link js-page-shop" href="">Shop</a>
+                                        <a class="nav-link nav-link-pc js-page-shop" >Shop</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link js-page-about" href="">About</a>
+                                        <a class="nav-link nav-link-pc js-page-about" >About</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link js-page-contact" href="">Contact</a>
+                                        <a class="nav-link nav-link-pc js-page-contact" >Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -62,7 +64,7 @@
                         <div class="header-action">
                             <div class="heart-wrap">
                                 <a href="" class="icon-cart">
-                                    <img src="assets/img/icon-heart.svg" alt="">
+                                    <img src="./assets/img/icon-heart.svg" alt="">
                                     <span class="amount-wishlist">6</span>
                                 </a>
                             </div>
@@ -115,7 +117,7 @@
                                         <li class="logged-dropdown-item">
                                             <a href="" class="logged-dropdown-item-content">
                                                 <i class="fa-solid fa-right-from-bracket icon-logout"></i>
-                                                <p  class="js-log-out">Log Out</p>
+                                                <p class="js-log-out">Log Out</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -136,7 +138,7 @@
                             <input type="radio" name="radio-btn" id="radio1">
                             <input type="radio" name="radio-btn" id="radio2">
                             <div class="slide slide-first">
-                                <img src="assets/img/slider-1.png" alt="">
+                                <img src="../assets/img/slider-1.png" alt="">
                             </div>
                             <div class="slide slide-last">
                                 <img src="assets/img/slider-2.png" alt="">
@@ -156,20 +158,20 @@
                     </div>
                 </div>
 
-                <div class="featured-categories">
+                <div class="featured-categories load__animate">
                     <div class="container">
                         <div class="section-title">
                             <div class="title">
                                 <h3>Featured Categories</h3>
                             </div>
-                            <div class="slide-arrow">
+                            <!-- <div class="slide-arrow">
                                 <span class="slide-arrow-left">
                                     <i class="fa-solid fa-arrow-left-long"></i>
                                 </span>
                                 <span class="slide-arrow-right">
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                 </span>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="list-featured-categories">
                             <div class="row">
@@ -195,7 +197,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1-2">
-                                    <div class="cover-button-product">
+                                    <div class="cover-button-product color-feefea">
                                         <img src="assets/img/cat-12.png" alt="">
                                         <h6>Oganic kiwi</h6>
                                     </div>
@@ -219,7 +221,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1-2">
-                                    <div class="cover-button-product">
+                                    <div class=" cover-button-product ">
                                         <img src="assets/img/cat-14.png" alt="">
                                         <h6>Sank</h6>
                                     </div>
@@ -241,7 +243,7 @@
                             </div>
 
                         </div>
-                        <div class="product-ads">
+                        <div class="product-ads load__animate">
                             <div class="row">
                                 <div class="cover-product-ads col-xl-4 ">
                                     <img src="assets/img/banner-1.png" alt="">
@@ -296,7 +298,7 @@
                     </div>
                 </div>
 
-                <div class="popular-products mt-30">
+                <div class="popular-products mt-30 load__animate" id="popular-product-box">
                     <div class="container">
                         <div class="section-title">
                             <div class="title">
@@ -326,7 +328,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Seeds of Change
                                                         Organic Quinoa, Brown, & Red Rice
                                                     </a>
-                                                    <p class="product-cart-description">If you want to have some refreshing and healthy drinks. Choose your favorite taste and enjoy the best from Deliany Juice.</p>
+                                                    <p class="product-cart-description">If you want to have some
+                                                        refreshing and healthy drinks. Choose your favorite taste and
+                                                        enjoy the best from Deliany Juice.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$28</span>
                                                         <div class="add-cart" onclick="addCartPageShop(event)">
@@ -348,7 +352,9 @@
                                                     <a class="product-cart-title js-product-cart-title">All Natural
                                                         Italian-Style Chicken Meatballs
                                                     </a>
-                                                    <p class="product-cart-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                                    <p class="product-cart-description">Sed ut perspiciatis unde omnis
+                                                        iste natus error sit voluptatem accusantium doloremque
+                                                        laudantium, totam rem aperiam.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$52</span>
                                                         <div class="add-cart">
@@ -367,10 +373,13 @@
                                                 </div>
 
                                                 <div class="product-cart-content">
-                                                    <a class="product-cart-title js-product-cart-title">Angie’s Boomchickapop 
+                                                    <a class="product-cart-title js-product-cart-title">Angie’s
+                                                        Boomchickapop
                                                         Sweet & Kettle Corn
                                                     </a>
-                                                    <p class="product-cart-description">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed qui ratione voluptatem sequi nesciunt.</p>
+                                                    <p class="product-cart-description">Nemo enim ipsam voluptatem quia
+                                                        voluptas sit aspernatur aut odit aut fugit, sed qui ratione
+                                                        voluptatem sequi nesciunt.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$48</span>
                                                         <div class="add-cart">
@@ -391,7 +400,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Chobani Complete
                                                         Vanilla Greek
                                                     </a>
-                                                    <p class="product-cart-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, voluptas nulla pariatur.</p>
+                                                    <p class="product-cart-description">Quis autem vel eum iure
+                                                        reprehenderit qui in ea voluptate velit esse quam nihil
+                                                        molestiae consequatur, voluptas nulla pariatur.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$53</span>
                                                         <div class="add-cart">
@@ -412,7 +423,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Haagen-Dazs
                                                         Caramel Cone Ice Cream Ketchup
                                                     </a>
-                                                    <p class="product-cart-description">Duis aute irure dolor in reprehenderit doloremque laudantium, in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                    <p class="product-cart-description">Duis aute irure dolor in
+                                                        reprehenderit doloremque laudantium, in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$47</span>
                                                         <div class="add-cart">
@@ -433,7 +446,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Foster Farms
                                                         Takeout Crispy Classic Buffalo Wings
                                                     </a>
-                                                    <p class="product-cart-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, et dolore quaerat voluptatem.</p>
+                                                    <p class="product-cart-description">Neque porro quisquam est, qui
+                                                        dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+                                                        et dolore quaerat voluptatem.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$17</span>
                                                         <div class="add-cart">
@@ -454,7 +469,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Blue Diamond
                                                         Almonds Lightly Salted Vegetables
                                                     </a>
-                                                    <p class="product-cart-description">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi consequatur</p>
+                                                    <p class="product-cart-description">Ut enim ad minima veniam, quis
+                                                        nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                                                        ut aliquid commodi consequatur</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$23</span>
                                                         <div class="add-cart">
@@ -475,7 +492,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Gorton’s Beer
                                                         Battered Fish Fillets with soft paper
                                                     </a>
-                                                    <p class="product-cart-description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                                    <p class="product-cart-description">It is a long established fact
+                                                        that a reader will be distracted by the readable content of a
+                                                        page when looking at its layout.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$28</span>
                                                         <div class="add-cart">
@@ -497,7 +516,9 @@
                                                     <a class="product-cart-title js-product-cart-title">All Natural
                                                         Style Chicken Meatballs
                                                     </a>
-                                                    <p class="product-cart-description">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally.</p>
+                                                    <p class="product-cart-description">Nor again is there anyone who
+                                                        loves or pursues or desires to obtain pain of itself, because it
+                                                        is pain, but because occasionally.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$68</span>
                                                         <div class="add-cart">
@@ -519,7 +540,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Encore Seafoods
                                                         Stuffed Alaskan Salmon
                                                     </a>
-                                                    <p class="product-cart-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti cupiditate non provident.</p>
+                                                    <p class="product-cart-description">At vero eos et accusamus et
+                                                        iusto odio dignissimos ducimus qui blanditiis praesentium
+                                                        voluptatum deleniti cupiditate non provident.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$94</span>
                                                         <div class="add-cart">
@@ -546,7 +569,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Blue Diamond
                                                         Almonds Lightly Salted Vegetables
                                                     </a>
-                                                    <p class="product-cart-description">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi consequatur.</p>
+                                                    <p class="product-cart-description">Ut enim ad minima veniam, quis
+                                                        nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                                                        ut aliquid commodi consequatur.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$28</span>
                                                         <div class="add-cart">
@@ -568,7 +593,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Encore Seafoods
                                                         Stuffed Alaskan Salmon
                                                     </a>
-                                                    <p class="product-cart-description">It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to which looks reasonable.</p>
+                                                    <p class="product-cart-description">It uses a dictionary of over 200
+                                                        Latin words, combined with a handful of model sentence
+                                                        structures, to which looks reasonable.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$75</span>
                                                         <div class="add-cart">
@@ -590,7 +617,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Gorton’s Beer
                                                         Battered Fish Fillets with soft paper
                                                     </a>
-                                                    <p class="product-cart-description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                                    <p class="product-cart-description">It is a long established fact
+                                                        that a reader will be distracted by the readable content of a
+                                                        page when looking at its layout.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$85</span>
                                                         <div class="add-cart">
@@ -612,7 +641,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Angie’s
                                                         Boomchickapop Sweet & Salty Kettle Corn
                                                     </a>
-                                                    <p class="product-cart-description">Voluptatem sequi nesciunt. Neque porro quisquam est, quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+                                                    <p class="product-cart-description">Voluptatem sequi nesciunt. Neque
+                                                        porro quisquam est, quia dolor sit amet, consectetur, adipisci
+                                                        velit, sed quia non numquam.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$24</span>
                                                         <div class="add-cart">
@@ -634,7 +665,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Chobani Complete
                                                         Vanilla Greek
                                                     </a>
-                                                    <p class="product-cart-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, voluptas nulla pariatur.</p>
+                                                    <p class="product-cart-description">Quis autem vel eum iure
+                                                        reprehenderit qui in ea voluptate velit esse quam nihil
+                                                        molestiae consequatur, voluptas nulla pariatur.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$53</span>
                                                         <div class="add-cart">
@@ -656,7 +689,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Foster
                                                         Takeout Crispy Classic Buffalo Wings
                                                     </a>
-                                                    <p class="product-cart-description">Sed ultrices massa non laoreet rutrum. Nullam vestibulum semper. Sed egestas dignissim sem at tempus. In et mollis justo.</p>
+                                                    <p class="product-cart-description">Sed ultrices massa non laoreet
+                                                        rutrum. Nullam vestibulum semper. Sed egestas dignissim sem at
+                                                        tempus. In et mollis justo.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$83</span>
                                                         <div class="add-cart">
@@ -678,7 +713,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Canada Dry
                                                         Ginger Ale – 2 L Bottle - 200ml - 400g
                                                     </a>
-                                                    <p class="product-cart-description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some or randomised words</p>
+                                                    <p class="product-cart-description">There are many variations of
+                                                        passages of Lorem Ipsum available, but the majority have
+                                                        suffered alteration in some or randomised words</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$36</span>
                                                         <div class="add-cart">
@@ -700,7 +737,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Chobani Complete
                                                         Vanilla Greek Yogurt
                                                     </a>
-                                                    <p class="product-cart-description">Sed varius fringilla lectus consequat condimentum. Aliquam turpis lorem, venenatis mauris vitae, vestibulum efficitur neque.</p>
+                                                    <p class="product-cart-description">Sed varius fringilla lectus
+                                                        consequat condimentum. Aliquam turpis lorem, venenatis mauris
+                                                        vitae, vestibulum efficitur neque.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$35</span>
                                                         <div class="add-cart">
@@ -723,7 +762,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Blue Almonds
                                                         Lightly Salted Vegetables
                                                     </a>
-                                                    <p class="product-cart-description">Duis quis nisl leo. Curabitur ut velit pharetra, ullamcorper efficitur nisi. Maecenas volutpat lacus id vehicula malesuada.</p>
+                                                    <p class="product-cart-description">Duis quis nisl leo. Curabitur ut
+                                                        velit pharetra, ullamcorper efficitur nisi. Maecenas volutpat
+                                                        lacus id vehicula malesuada.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$76</span>
                                                         <div class="add-cart">
@@ -745,7 +786,9 @@
                                                     <a class="product-cart-title js-product-cart-title">Haagen-Dazs
                                                         Caramel Cone Ice Cream Ketchup
                                                     </a>
-                                                    <p class="product-cart-description">Duis aute irure dolor in reprehenderit doloremque laudantium, in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                    <p class="product-cart-description">Duis aute irure dolor in
+                                                        reprehenderit doloremque laudantium, in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur.</p>
                                                     <div class="product-card-bottom">
                                                         <span class="js-product-cart-price current-price">$47</span>
                                                         <div class="add-cart">
@@ -762,7 +805,7 @@
                     </div>
                 </div>
 
-                <div class="container-box">
+                <div class="container-box load__animate">
                     <div class="container-box-1 content-box-1">
                         <img class="container-box-img" src="/assets/img/banner-5.png" alt="">
                         <div class="container-box-content">
@@ -804,7 +847,7 @@
                             <div class="container-box-footer">
                                 <h3>$24.85</h3>
                                 <button class="button-cart"><a href="#popular-product-box">
-                                    <i class="fa-solid fa-cart-shopping container-box-icon-cart"></i>Add</a>
+                                        <i class="fa-solid fa-cart-shopping container-box-icon-cart"></i>Add</a>
                                 </button>
                             </div>
                         </div>
@@ -853,13 +896,13 @@
                                 <button class="button-cart">
                                     <a href="#popular-product-box">
                                         <i class="fa-solid fa-cart-shopping container-box-icon-cart"></i>Add</a>
-                                    </button>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="typical-products-wrap mt-30">
+                <div class="typical-products-wrap mt-30 load__animate">
                     <div class="container">
                         <div class="row">
                             <div class="col col-3 col-4 col-6 col-12">
@@ -1053,18 +1096,26 @@
 
                         </div>
                         <div class="categories-product container">
-                            <!-- <div class="filter-by-price">
-                                <p>Sort by</p>
-                                <select name="" id="" class="js-filter-by-price">
-
+                            <div class="filter-by-price">
+                                <p class="sort-by">Sort by: </p>
+                                <select name="" id="filter-by-price" class="js-filter-by-price" onchange="filterByPrice()">
+                                    <option value="0">Price</option>
+                                    <option value="1">from 1 - 20$</option>
+                                    <option value="2">from 21 - 40$</option>
+                                    <option value="3">from 41 - 60$</option>
+                                    <option value="4">from 61 - 80$</option>
+                                    <option value="5">from 81 - 100$</option>
+                                    <option value="6">over 100 dollars</option>
                                 </select>
-                            </div> -->
-                            <div class="row js-product-lists"></div>
+                            </div>
+                            <div class="row js-product-lists">
+                                <div class="js-none-result close-implement">Không có sản phẩm bạn cần tìm.</div>
+                            </div>
 
                             <div class="pagination-area">
                                 <ul class="pagination-list">
                                     <li class="pagination-item-arrow">
-                                        <a href="">
+                                        <a >
                                             <i class="fa-solid fa-left-long"></i>
                                         </a>
 
@@ -1074,7 +1125,7 @@
                                     </div>
 
                                     <li class="pagination-item-arrow">
-                                        <a href="/index.html?cate_id=snack">
+                                        <a >
                                             <i class="fa-solid fa-right-long"></i>
                                         </a>
                                     </li>
@@ -1086,7 +1137,7 @@
             </div>
         </div>
 
-        <div class="about-shop-wrap mt-30 js-open-page-about">
+        <div class="about-shop-wrap mt-30 js-open-page-about load__animate">
             <div class="container">
                 <div class="row">
                     <div class="about-shop col-10 m-auto">
@@ -1134,7 +1185,7 @@
                             </div>
                         </div>
 
-                        <div class="row mt-60">
+                        <div class="row mt-60 load__animate">
                             <div class="container">
                                 <h1 class="our-team-title-primary">What We Provide?</h1>
                                 <div class="row">
@@ -1169,7 +1220,7 @@
                             </div>
                         </div>
 
-                        <div class="row our-performance">
+                        <div class="row our-performance load__animate">
                             <div class="col col-xl-6">
                                 <div class="img-our-performance">
                                     <img src="../assets/img/about-5.png" alt="">
@@ -1216,7 +1267,7 @@
                             </div>
                         </div>
 
-                        <div class="about-banner">
+                        <div class="about-banner load__animate">
                             <img src="../assets/img/about-9.png" alt="">
                         </div>
 
@@ -1276,136 +1327,122 @@
             </div>
         </div>
 
-        <div class="page-contact-wrap js-open-page-contact">
+        <div class="page-contact-wrap js-open-page-contact load__animate">
             <div class="body-main_page">
-                <div class="container">
+                <div class="container"> 
                     <div class="row">
-                        <div class="first-body_main">
-                            <div class="row align-items-end">
-                                <div class="col-first-body_main">
-                                    <h4 class="title_first-body">How can hepl you ?</h4>
-                                    <h1 class="content_first_main-page">Let us know how we can help you</h1>
-                                    <p class="mb-30">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-                                        nec ullamcorper mattis, pulvinar dapibus leo.
-                                    </p>
+                    <div class="first-body_main">
+                        <div class="row align-items-end">
+                        <div class="col-first-body_main">
+                            <h4 class="title_first-body">How can help you ?</h4>
+                            <h1 class="content_first_main-page">Let us know how we can help you</h1> 
+                            <p class="mb-30">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.`
+                            </p>  
+                        </div>
+                        <div class="item_frist-body">
+                            <div class="row">
+                                <div class="item_first">
+                                    <h5 class="title-item">01. Visit Feedback</h5>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-                                        nec ullamcorper mattis, pulvinar dapibus leo.`
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
                                     </p>
                                 </div>
-                                <div class="item_frist-body">
-                                    <div class="row">
-                                        <div class="item_first">
-                                            <h5 class="title-item">01. Visit Feedback</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                                                luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                            </p>
-                                        </div>
-                                        <div class="item_first">
-                                            <h5 class="title-item">02. Employer Services</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                                                luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                            </p>
-                                        </div>
-                                        <div class="item_first">
-                                            <h5 class="title-item">03. Billing Inquiries</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                                                luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                            </p>
-                                        </div>
-                                        <div class="item_first">
-                                            <h5 class="title-item">04. General Inquiries</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                                                luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                            </p>
-                                        </div>
-                                    </div>
+                                <div class="item_first">
+                                    <h5 class="title-item">02. Employer Services</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </p>
+                                </div>
+                                <div class="item_first">
+                                    <h5 class="title-item">03. Billing Inquiries</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. 
+                                    </p>
+                                </div>
+                                <div class="item_first">
+                                    <h5 class="title-item">04. General Inquiries</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                    </p>
                                 </div>
                             </div>
                         </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-
-                <div class="container">
+                
+                <div class="container load__animate">
                     <div class="row">
                         <div class="last_main-page">
                             <div class="row infor-main-page">
                                 <div class="last_main-item">
                                     <h4 class="title-last_main-item">Shop</h4>
-                                    <p>
-                                        205 North Michigan Avenue, Suite 810
-                                        <br>
-                                        Chicago, 60601, USA
-                                        <br>
-                                        <abbr class="phone_email" title="Phone">Phone:</abbr>
-                                        (123) 456-7890
-                                        <br>
-                                        <abbr class="phone_email" title="Email">Email:</abbr>
-                                        contact@Evara.com
-                                        <br>
-                                        <a class="btn_View">
-                                            <i class="">
-
-                                            </i>
-                                            View map
-                                        </a>
-                                    </p>
-
+                                    205 North Michigan Avenue, Suite 810
+                                    <br>
+                                    Chicago, 60601, USA
+                                    <br>
+                                    <abbr class="phone_email" title="Phone">Phone:</abbr>
+                                    (123) 456-7890
+                                    <br>
+                                    <abbr class="phone_email" title="Email">Email:</abbr>
+                                     contact@Evara.com
+                                    <br>
+                                    <a class="btn_View">
+                                        <i class="">
+                                            
+                                        </i>
+                                        View map
+                                    </a>
                                 </div>
                                 <div class="last_main-item">
                                     <h4 class="title-last_main-item">Shop</h4>
-                                    <p>
-                                        205 North Michigan Avenue, Suite 810
-                                        <br>
-                                        Chicago, 60601, USA
-                                        <br>
-                                        <abbr class="phone_email" title="Phone">Phone:</abbr>
-                                        (123) 456-7890
-                                        <br>
-                                        <abbr class="phone_email" title="Email">Email:</abbr>
-                                        contact@Evara.com
-                                        <br>
-                                        <a class="btn_View">
-                                            <i class="">
-
-                                            </i>
-                                            View map
-                                        </a>
-                                    </p>
+                                    205 North Michigan Avenue, Suite 810
+                                    <br>
+                                    Chicago, 60601, USA
+                                    <br>
+                                    <abbr class="phone_email" title="Phone">Phone:</abbr>
+                                    (123) 456-7890
+                                    <br>
+                                    <abbr class="phone_email" title="Email">Email:</abbr>
+                                     contact@Evara.com
+                                    <br>
+                                    <a class="btn_View">
+                                        <i class="">
+                                            
+                                        </i>
+                                        View map
+                                    </a>
                                 </div>
                                 <div class="last_main-item">
                                     <h4 class="title-last_main-item">Shop</h4>
-                                    <p>
-                                        205 North Michigan Avenue, Suite 810
-                                        <br>
-                                        Chicago, 60601, USA
-                                        <br>
-                                        <abbr class="phone_email" title="Phone">Phone:</abbr>
-                                        (123) 456-7890
-                                        <br>
-                                        <abbr class="phone_email" title="Email">Email:</abbr>
-                                        contact@Evara.com
-                                        <br>
-                                        <a class="btn_View">
-                                            <i class="">
-
-                                            </i>
-                                            View map
-                                        </a>
-                                    </p>
+                                    205 North Michigan Avenue, Suite 810
+                                    <br>
+                                    Chicago, 60601, USA
+                                    <br>
+                                    <abbr class="phone_email" title="Phone">Phone:</abbr>
+                                    (123) 456-7890
+                                    <br>
+                                    <abbr class="phone_email" title="Email">Email:</abbr>
+                                     contact@Evara.com
+                                    <br>
+                                    <a class="btn_View">
+                                        <i class="">
+                                            
+                                        </i>
+                                        View map
+                                    </a>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="info_Contact-from">
                                     <h5 class="titel-Contact_from">Contact form</h5>
                                     <h2 class="titel-Contact_from_2">Drop Us a Line</h2>
-                                    <p class="text-Contact_from">Your email address will not be published. Required
-                                        fields are marked *</p>
+                                    <p class="text-Contact_from">Your email address will not be published. Required fields are marked *</p>
                                     <form class="contact-from-style" action="">
                                         <div class="row">
                                             <div class="from_Contact">
@@ -1414,35 +1451,35 @@
                                                 </div>
                                             </div>
                                             <div class="from_Contact">
-                                                <div class="input-style input-style-odd">
+                                                <div class="input-style">
                                                     <input name="email" placeholder="Your Email" type="email">
                                                 </div>
-                                            </div>
+                                            </div>    
                                             <div class="from_Contact">
                                                 <div class="input-style">
                                                     <input name="telephone" placeholder="Your Phone" type="tel">
                                                 </div>
-                                            </div>
+                                            </div>     
                                             <div class="from_Contact">
-                                                <div class="input-style input-style-odd">
+                                                <div class="input-style">
                                                     <input name="subject" placeholder="Subject" type="text">
                                                 </div>
-                                            </div>
+                                            </div>     
                                             <div class="from_Contact-1">
                                                 <div class="textarea-style">
                                                     <textarea name="messenge" placeholder="Messenge"></textarea>
                                                 </div>
-                                            </div>
+                                            </div>     
                                             <button class="btn-Messenge" type="submit">Send message</button>
                                         </div>
                                     </form>
                                     <p class="form-messenger"></p>
                                 </div>
-                                <div class="img_Contact-1">
-                                    <img class="img_Contact" src="assets/img/contact-2.png" alt="">
-                                </div>
+                            <div class="img_Contact-1">
+                                <img class="img_Contact" src="assets/img/contact-2.png" alt="">
+                            </div>    
                             </div>
-
+                            
                         </div>
                     </div>
                 </div>
@@ -1450,7 +1487,7 @@
         </div>
 
 
-        <div class="footer">
+        <div class="footer load__animate">
             <div class="container">
                 <div class="footer-img">
                     <h2 class="footer-img__title">
@@ -1514,7 +1551,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-body">
+                <div class="footer-body load__animate">
                     <div class="footer-body__item">
                         <img class="footer-img__logo" src="./assets/img/logo.png" alt="">
                         <p class="footer-logo__heading">Awesome grocery store website template</p>
@@ -1531,7 +1568,7 @@
                         </ul>
 
                     </div>
-                    <div class="footer-body__item">
+                    <div class="footer-body__item load__animate">
                         <h4 class="footer-body_title">Company</h4>
                         <ul class="contact-info">
                             <li><a href="#" class="footer-item__link">About Us</a></li>
@@ -1543,7 +1580,7 @@
                             <li><a href="#" class="footer-item__link">Careers</a></li>
                         </ul>
                     </div>
-                    <div class="footer-body__item">
+                    <div class="footer-body__item load__animate">
                         <h4 class="footer-body_title">Account</h4>
                         <ul class="contact-info">
                             <li><a href="#" class="footer-item__link">Sign In</a></li>
@@ -1555,7 +1592,7 @@
                             <li><a href="#" class="footer-item__link">Compare products</a></li>
                         </ul>
                     </div>
-                    <div class="footer-body__item">
+                    <div class="footer-body__item load__animate">
                         <h4 class="footer-body_title">Corporate</h4>
                         <ul class="contact-info">
                             <li><a href="#" class="footer-item__link">Become a Vendor</a></li>
@@ -1567,7 +1604,7 @@
                             <li><a href="#" class="footer-item__link">Promotions</a></li>
                         </ul>
                     </div>
-                    <div class="footer-body__item">
+                    <div class="footer-body__item load__animate">
                         <h4 class="footer-body_title">Popular</h4>
                         <ul class="contact-info">
                             <li><a href="#" class="footer-item__link">Milk & Flavoured Milk</a></li>
@@ -1579,8 +1616,8 @@
                             <li><a href="#" class="footer-item__link">Cheese</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <h4 class="footer-body_title">Install App</h4>
+                    <div class="load__animate">
+                        <h4 class="footer-body_title ">Install App</h4>
                         <p class="footer-install">From App Store or Google Play</p>
                         <div class="footer-dowload">
                             <img class="footer-img__dowload" src="./assets/img/app-store.jpg" alt="">
@@ -1652,17 +1689,17 @@
                 <div class="header-nav-menu-mini">
                     <ul class="nav-list">
                         <li class="nav-item color-active">
-                            <a class="nav-link js-page-home" href="/">Home</a>
+                            <a class="nav-link nav-link-pc js-page-home " href="">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-page-shop" href="">Shop</a>
+                            <a class="nav-link nav-link-pc js-page-shop" >Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-page-about" href="">About</a>
+                            <a class="nav-link nav-link-pc js-page-about" >About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-page-contact" href="">Contact</a>
+                            <a class="nav-link nav-link-pc js-page-contact" >Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -1769,7 +1806,7 @@
 
                         <div class="auth-form__aside">
                             <p class="auth-form__help">
-                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                <a  class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
                                 <span class="auth-form__help-separate"></span>
                                 <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
                             </p>
@@ -1895,8 +1932,22 @@
             </div>
         </div>
     </div>
+    <div class="toTop">
+        <i class="fa fa-chevron-right"></i>
+    </div>
 
-
+    <div class="container__loading">
+        <div class="elements__loading">
+            <div style="--value: 1"></div>
+            <div style="--value: 2"></div>
+            <div style="--value: 3"></div>
+            <div style="--value: 4"></div>
+            <div style="--value: 5"></div>
+            <div style="--value: 6"></div>
+            <div style="--value: 7"></div>
+            <div style="--value: 8"></div>
+        </div>
+    </div>
     <script src="/assets/js/product.js"></script>
     <script src="/assets/js/category.js"></script>
     <script src="/assets/js/history.js"></script>
