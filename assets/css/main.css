@@ -23,8 +23,11 @@ ul{
 .wrapper{
     overflow: hidden;
 }
-.color-feefea{
-    background-color: #feefea;
+
+.none-product-list{
+    font-size: 24px;
+    text-align: center;
+    padding-left: 12px;
 }
 .color-text{
     color: #253D4E;
@@ -44,6 +47,12 @@ ul{
 }
 .mb-30{
     margin-bottom: 30px;
+}
+.header-nav .nav-link{
+    color: var(--text-color);
+}
+.header-nav-menu-mini .nav-link{
+    color: var(--text-color);
 }
 .mb-24{
     margin-bottom: 24px;
@@ -1256,5 +1265,16 @@ html{
     color: #253D4E;
 }
 
+/* .amount-product{
+    transition: all .3s linear;
+}
+@keyframes abc {
+    from{
+        transform: translateY(120px);
+    }
+    to{
+        transform: translateY(0);
+    }
+} */
 
 

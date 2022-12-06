@@ -1,4 +1,5 @@
 let taikhoannguoidung = []
+var PRODUCTDATA = []
 if (localStorage.getItem("TaiKhoanDangKy")) {
     var json = localStorage.getItem("TaiKhoanDangKy")
     var json1 = JSON.parse(json)
@@ -9,7 +10,7 @@ if (localStorage.getItem("TaiKhoanDangKy")) {
 
 var logOut = document.getElementsByClassName("menu-footer")[0]
 logOut.addEventListener("click", function () {
-    history.back()
+    location.href = "http://127.0.0.1:5500"
 })
 
 //do rong menu

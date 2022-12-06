@@ -112,8 +112,8 @@ const PRODUCTDATA = [{
     "detail":"Sed varius fringilla lectus consequat condimentum. Aliquam turpis lorem, venenatis mauris vitae, vestibulum efficitur neque.",
 },];
 
-var json = JSON.stringify(PRODUCTDATA)
-localStorage.setItem("PRODUCTDATA", json)
+// var json = JSON.stringify(PRODUCTDATA)
+// localStorage.setItem("PRODUCTDATA", json)
 
 // if(localStorage.getItem("PRODUCTDATA")){
 //     var json = localStorage.getItem("PRODUCTDATA")

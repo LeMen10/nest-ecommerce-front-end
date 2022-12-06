@@ -988,7 +988,7 @@ body.dark .table-product tr:nth-child(odd) {
 .add-update-product {
     position: fixed;
     display: none;
-    top: 50px;
+    top: 6px;
     right: 500px;
     height: auto;
     width: 500px;
@@ -1110,6 +1110,7 @@ body.dark .btn-btn button {
 
 .detail-product {
     resize: none;
+    min-height: 50px;
 }
 
 

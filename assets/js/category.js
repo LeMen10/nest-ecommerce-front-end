@@ -28,3 +28,5 @@ const category = [{
     "img" : "/assets/img/category-2.svg",
 }];
 
+// var json = JSON.stringify(category)
+// localStorage.setItem("Category", json)

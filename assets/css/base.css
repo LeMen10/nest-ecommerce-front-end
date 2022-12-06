@@ -178,6 +178,9 @@
 .auth-form__help-forgot{
     color: var(--primary-color);
 }
+.auth-form__help-forgot:hover{
+    cursor: pointer;
+}
 /* Button style */
 .btn{
     min-width: 124px;
@@ -194,6 +197,9 @@
     justify-content: center;
     line-height: 1.6rem;
     background-color: var(--white-color);
+}
+.btn:hover{
+    cursor: pointer;
 }
 .btn--normal{
     background-color: rgba(0, 0, 0, 0.15);
@@ -227,8 +233,12 @@
 .open-modal-register{
     display: flex;
 }
+
+
+
 .toast-message-wrapper{
-    width: 490px;
+    font-family: var(--font-family-quicksand);
+    width: 518px;
     margin: 0px auto;
     margin-top: 30px;       
 }
@@ -244,7 +254,7 @@
     background: #fff;
     margin-right: 0px;
     min-width: 400px;
-    max-width: 400px;
+    max-width: 420px;
     border-radius: 2px;
     border-left: 4px solid;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);

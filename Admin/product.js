@@ -5,6 +5,8 @@ for(var i = 0 ; i < json1.length ; i++) {
     PRODUCTDATA[i] = json1[i]
 }
 
+const content = document.getElementsByClassName('content-home')[0];
+
 //render product
 function renderProduct() {
     var kq = ` <div class="content---ne">
@@ -157,8 +159,8 @@ function add() {
         }
         PRODUCTDATA.push(addProduct)
         add_update_product.style.display = "none"
-        // var json = JSON.stringify(PRODUCTDATA)
-        // localStorage.setItem("PRODUCTDATA", json)
+        var json = JSON.stringify(PRODUCTDATA)
+        localStorage.setItem("PRODUCTDATA", json)
         renderProduct()
         total_page()
         color()
@@ -197,8 +199,8 @@ function update_product() {
         }
         PRODUCTDATA[id.value - 1] = addProduct
         add_update_product.style.display = "none"
-        // var json = JSON.stringify(PRODUCTDATA)
-        // localStorage.setItem("PRODUCTDATA", json)
+        var json = JSON.stringify(PRODUCTDATA)
+        localStorage.setItem("PRODUCTDATA", json)
         renderProduct()
         total_page()
         color()
@@ -221,8 +223,8 @@ function deleteP(num) {
         renderProduct()
         total_page()
         alert("Delete successfully")
-        // var json = JSON.stringify(PRODUCTDATA)
-        // localStorage.setItem("PRODUCTDATA", json)
+        var json = JSON.stringify(PRODUCTDATA)
+        localStorage.setItem("PRODUCTDATA", json)
         color()
     }
     else {

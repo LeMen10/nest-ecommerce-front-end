@@ -118,6 +118,8 @@ function showModalLogin() {
     modalRegister.classList.remove('open-modal-register');
     modalLogin.classList.add('open-modal-login');
     modalQuen.classList.remove('open-modal-quen')
+    logInUsername.value = '';
+    logInPassword.value = '';
 }
 function hindeModalLogin() {
     modalLogin.classList.remove('open-modal-login');
@@ -275,9 +277,9 @@ function register() {
                 localStorage.setItem(username.value, json)
                 toast({
                     title: 'Thành công!',
-                    message: 'Bạn đã đăng ký thành công!',
+                    message: 'Bạn đã đăng ký thành công &#128526',
                     type: 'success',
-                    duration: 3000
+                    duration: 2000
                 })
                 showModalLogin();
                 username.value = "";
@@ -288,10 +290,10 @@ function register() {
             }
             else if (username.value == checkUser.username) {
                 toast({
-                    title: 'Cảnh bảo!',
-                    message: 'Tài khoản có người đăng ký!',
+                    title: 'Thông báo!',
+                    message: 'Tài khoản đã có người đăng ký &#128524',
                     type: 'warning',
-                    duration: 3000
+                    duration: 2000
                 })
                 username.value = ""
                 username.focus()
@@ -307,21 +309,21 @@ var logInUsername = document.getElementById("auth-form__user-login");
 var logInPassword = document.getElementById("auth-form__password-login");
 
 
-    logInUsername.addEventListener('keydown', function (e) {
-        if (e.keyCode == 13) {
-            logIn();
-        }
-    })
-    
-    logInPassword.addEventListener('keydown', function (e) {
-        if (e.keyCode == 13) {
-            logIn();
-        }
-    })
+logInUsername.addEventListener('keydown', function (e) {
+    if (e.keyCode == 13) {
+        logIn();
+    }
+})
+
+logInPassword.addEventListener('keydown', function (e) {
+    if (e.keyCode == 13) {
+        logIn();
+    }
+})
 
 
 function logIn() {
-    
+
     var user = localStorage.getItem(logInUsername.value)
     var checkUser = JSON.parse(user);
 
@@ -329,19 +331,20 @@ function logIn() {
         if (checkUser == null) {
             toast({
                 title: 'Thông báo!',
-                message: 'Bạn chưa đăng ký tài khoản! Mời bạn đăng ký.',
+                message: 'Bạn chưa có tài khoản! Mời bạn đăng ký &#128521',
                 type: 'warning',
-                duration: 3000
+                duration: 2000
             })
         }
         else {
             if (logInUsername.value == 'admin' && logInPassword.value == '12345678') {
+                // location.reload();
                 hindeModalLogin();
                 localStorage.setItem("Now", logInUsername.value);
                 localStorage.setItem('sessionID', generateToken());
                 localStorage.setItem('sessionUser', checkUser.username);
-                logInUsername = '';
-                logInPassword = '';
+                // logInUsername = '';
+                // logInPassword = '';
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else if (logInUsername.value == checkUser.username && logInPassword.value == checkUser.password) {
@@ -350,17 +353,17 @@ function logIn() {
                 localStorage.setItem("Now", logInUsername.value);
                 localStorage.setItem('sessionID', generateToken());
                 localStorage.setItem('sessionUser', checkUser.username);
-                logInUsername = '';
-                logInPassword = '';
+                // logInUsername = '';
+                // logInPassword = '';
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else {
                 if (!(logInPassword.value == checkUser.password)) {
                     toast({
                         title: 'Thông báo!',
-                        message: 'Password chưa đúng!',
+                        message: 'Password chưa đúng &#128566&#128566',
                         type: 'warning',
-                        duration: 3000
+                        duration: 2000
                     })
                     logInPassword.focus();
                 }
@@ -372,27 +375,27 @@ function logIn() {
         if (logInUsername.value == "" && logInPassword.value == "") {
             toast({
                 title: 'Thông báo!',
-                message: 'Bạn chưa nhập username và password!',
+                message: 'Bạn chưa nhập Username và Password &#128566&#128566',
                 type: 'warning',
-                duration: 3000
+                duration: 2000
             })
             logInUsername.focus();
         }
         else if (logInUsername.value == "") {
             toast({
                 title: 'Thông báo!',
-                message: 'Bạn chưa nhập username!',
+                message: 'Bạn chưa nhập Username &#128566&#128566',
                 type: 'warning',
-                duration: 3000
+                duration: 2000
             })
             logInUsername.focus();
         }
         else if (logInPassword.value == "") {
             toast({
                 title: 'Thông báo!',
-                message: 'Bạn chưa nhập password!',
+                message: 'Bạn chưa nhập Password &#128566&#128566',
                 type: 'warning',
-                duration: 3000
+                duration: 2000
             })
             logInPassword.focus();
         }
@@ -601,9 +604,9 @@ function quen() {
             localStorage.setItem(user_quen.value, json)
             toast({
                 title: 'Thành công!',
-                message: 'Bạn đã đổi mật khẩu thành công!',
+                message: 'Bạn đã đổi mật khẩu thành công &#128521',
                 type: 'success',
-                duration: 3000
+                duration: 2000
             })
             hideModalQuen()
             nhap_xac_nhan.style.display = "block"
@@ -658,16 +661,19 @@ modalContainerQuen.addEventListener("click", function (e) {
 const btnLogout = document.querySelector('.js-log-out');
 let historyLength = history.length
 function logOut() {
+    // location.reload();
     localStorage.removeItem("pageShop");
     localStorage.removeItem('sessionID');
     localStorage.removeItem('sessionUser');
     localStorage.removeItem('Now');
     localStorage.removeItem("ContentCart")
-    for (var i = 0; i < historyLength; i++) {
-        event.preventDefault()
-        history.go(-1)
-    }
+    window.location.href = 'http://127.0.0.1:5500/index.html';
 }
+
+// for (var i = 0; i <= history.length; i++) {
+//     history.back()
+// }
+// window.location.href = 'http://127.0.0.1:5500/';
 btnLogout.addEventListener('click', logOut);
 //end log out
 
@@ -775,20 +781,91 @@ function changePage() {
 
 }
 const titleProductList = document.querySelector('.title-product-list');
+var arrCategogys = JSON.parse(localStorage.getItem("Category"));
+// console.log(arrCategogys)
 var s1 = '';
 function renderCategory() {
+    freshfruit();
+    snack();
+    coffee();
+    vegetable();
     if (s1 === '') {
-        category.forEach((item) => {
+        arrCategogys.forEach((item) => {
             s1 += `<li class="title-product-item">
                     <div class="product-item">
                         <img src="${item.img}" alt="">
                         <a  class="render-by-category" onclick="renderByCategory()">${item.title}</a>
                     </div>
-                <div class="count-product">${item.count}</div>
+                <div class="count-product ">${item.count}</div>
             </li>`
         })
         titleProductList.innerHTML = s1;
     }
+}
+
+
+
+function freshfruit() {
+    var length = arrProductData.length, dem = 0;
+    for (var i = 0; i < length; i++) {
+        if (arrProductData[i].category == 'freshfruit') {
+            dem++;
+        }
+    }
+
+    for (var i = 0; i < arrCategogys.length; i++) {
+        if (arrCategogys[i].name == 'freshfruit') {
+            arrCategogys[i].count = dem;
+        }
+    }
+    var json = JSON.stringify(arrCategogys)
+    localStorage.setItem("Category", json)
+}
+
+function vegetable() {
+    var length = arrProductData.length, dem = 0;
+    for (var i = 0; i < length; i++) {
+        if (arrProductData[i].category == 'vegetable') {
+            dem++;
+        }
+    }
+    for (var i = 0; i < arrCategogys.length; i++) {
+        if (arrCategogys[i].name == 'vegetable') {
+            arrCategogys[i].count = dem;
+        }
+    }
+    var json = JSON.stringify(arrCategogys)
+    localStorage.setItem("Category", json)
+}
+function snack() {
+    var length = arrProductData.length, dem = 0;
+    for (var i = 0; i < length; i++) {
+        if (arrProductData[i].category == 'snack') {
+            dem++;
+        }
+    }
+    for (var i = 0; i < arrCategogys.length; i++) {
+        if (arrCategogys[i].name == 'snack') {
+            arrCategogys[i].count = dem;
+        }
+    }
+    var json = JSON.stringify(arrCategogys)
+    localStorage.setItem("Category", json)
+}
+function coffee() {
+    var length = arrProductData.length, dem = 0;
+    for (var i = 0; i < length; i++) {
+        if (arrProductData[i].category == 'coffee') {
+            dem++;
+        }
+    }
+    for (var i = 0; i < arrCategogys.length; i++) {
+        if (arrCategogys[i].name == 'coffee') {
+            arrCategogys[i].count = dem;
+        }
+    }
+    var json = JSON.stringify(arrCategogys)
+    localStorage.setItem("Category", json)
 }
 
 function renderByCategory() {
@@ -820,6 +897,7 @@ function openPageShop() {
     window.scrollTo(0, 0);
     renderPageNumber();
     renderCategory();
+
 }
 for (const btnPageShop of btnPageShops) {
     btnPageShop.addEventListener('click', function () {
@@ -882,12 +960,16 @@ function searchProduct() {
             if (item.title.toLowerCase().includes(dataSearch.value)) {
                 resultProducts.push(item);
             }
-
         })
+
         renderPageNumberSearch(resultProducts)
         renderProductFilter(resultProducts);
+        if (resultProducts.length == 0) {
+            productLists.innerText = 'Không có sản phẩm bạn cần tìm.'
+        }
     }
-    return resultProducts
+    console.log(resultProducts)
+    // return resultProducts
 }
 
 dataSearch.addEventListener('keydown', function (e) {
@@ -932,14 +1014,19 @@ overlayMenu.addEventListener('click', function () {
     modalMini.classList.remove('open-modal-menu-mb')
 })
 // end modal mini
-
+const btnNavLinks = document.querySelectorAll('.nav-link-pc');
+for (const btnNavLink of btnNavLinks) {
+    btnNavLink.addEventListener('click', () => {
+        modalMini.classList.remove('open-modal-menu-mb')
+    })
+}
 
 //thông báo
 function toast({
     title = '',
     message = '',
     type = 'info',
-    duration = 3000
+    duration = 2000
 }) {
     const main = document.getElementById('toast');
     if (main) {
@@ -1192,7 +1279,9 @@ function addCartPageShop(event) {
     var title = product.getElementsByClassName("product-cart-title")[0].innerText
     var img = product.getElementsByClassName("js-product-cart-src")[0].src
     var price = product.getElementsByClassName("current-price")[0].innerText.replace("$", "")
-    add_to_cart(title, img, price)
+    add_to_cart(title, img, price);
+    var abc = document.querySelector('.amount-product');
+    abc.style.animation = 'abc .5s ease-in-out'
     updateTotal()
 }
 function addCartPageDescription() {
@@ -1235,13 +1324,15 @@ if (localStorage.getItem("ContentCart")) {
     }
 }
 function add_to_cart(title, img, price) {
+    var abc = document.querySelector('.amount-product');
+    abc.style.animation = 'abc .5s ease-in-out'
     var cart_dropdown_list = document.getElementsByClassName("cart-dropdown-list")[0]
     var cart_dropdown_title = cart_dropdown_list.getElementsByClassName("cart-dropdown-title")
     for (var i = 0; i < cart_dropdown_title.length; i++) {
         if (cart_dropdown_title[i].innerText == title) {
             toast({
                 title: 'Thông báo!',
-                message: 'Sản phẩm này đã có trong giỏ hàng!',
+                message: 'Sản phẩm này đã có trong giỏ hàng &#128578&#128578',
                 type: 'warning',
                 duration: 4000
             })
@@ -1349,9 +1440,9 @@ function buy() {
     if (cart_dropdown_list.innerText == "") {
         toast({
             title: 'Thông báo!',
-            message: 'Giỏ hàng trống. Vui lòng thêm sản phẩm!',
+            message: 'Giỏ hàng trống. Vui lòng thêm sản phẩm &#128522&#128522',
             type: 'warning',
-            duration: 3000
+            duration: 2000
         })
     }
     else if (localStorage.getItem("Now")) {
@@ -1405,9 +1496,9 @@ function buy() {
         localStorage.setItem("SanPhamDaMua", sanpham)
         toast({
             title: 'Thành công!',
-            message: 'Bạn đã mua hàng thành công !',
+            message: 'Chúc mừng! Bạn mua hàng thành công &#128525&#129297&#129297',
             type: 'success',
-            duration: 3000
+            duration: 2000
         })
         cart_dropdown_list.innerHTML = ""
         updateTotal()

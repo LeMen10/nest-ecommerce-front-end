@@ -60,6 +60,9 @@
     width: 33.3333333333%;
     margin-bottom: 0!important;
 }
+.col-first-body_main p{
+    font-size: 16px;
+}
 .item_frist-body{
     flex: 0 0 auto;
     width: 66.6666666667%;
@@ -90,11 +93,18 @@
     margin-bottom: 1.5rem;
     padding: 0px 40px 0px;
 }
+.item_first p{
+    font-size: 16px;
+}
+.item_first h5{
+    font-size: 26px;
+}
 .title-item{
     margin-bottom: 20px;
     font-size: 20px; 
     color: #253D4E;
 }
+
 .last_main-page{
     flex: 0 0 auto;
     width: 83.3333333333%;
@@ -107,9 +117,10 @@
 .last_main-item{
     flex: 0 0 auto;
     width: 33.3333333333%;
+    font-size: 14px;
     margin-bottom: 0;
 }
-.title-last_main-item{
+.last_main-item .title-last_main-item{
     color: #3BB77E;
     font-size: 24px;
     margin-bottom: 15px;
@@ -165,7 +176,10 @@
     margin-bottom: 20px;
     padding-right: 15px;
 }
-.footer-img__control input{
+.input-style-odd{
+    padding-right: 0;
+}
+.input-style input{
     border: 1px solid #ececec;
     border-radius: 10px;
     height: 64px;
