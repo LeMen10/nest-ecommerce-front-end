@@ -114,10 +114,11 @@ const loginBtn = document.querySelector('.js-login');
 const modalLogin = document.querySelector('.js-modal-login');
 const modalContainerLogin = document.querySelector('.js-modal-container-login')
 
+
 function showModalLogin() {
     modalRegister.classList.remove('open-modal-register');
     modalLogin.classList.add('open-modal-login');
-    modalQuen.classList.remove('open-modal-quen')
+    // modalQuen.classList.remove('open-modal-quen');
     logInUsername.value = '';
     logInPassword.value = '';
 }
@@ -131,17 +132,17 @@ modalContainerLogin.addEventListener('click', function (e) {
     e.stopPropagation();
 })
 
-var formRegister = document.querySelector('#form-register');
 const Taikhoan_Dangky = [];
 if (localStorage.getItem("TaiKhoanDangKy")) {
     var taikhoan = localStorage.getItem("TaiKhoanDangKy");
     var json = JSON.parse(taikhoan);
-
+    
     for (var i = 0; i < json.length; i++) {
         Taikhoan_Dangky[i] = json[i];
     }
 }
 
+var formRegister = document.querySelector('#form-register');
 var email = document.getElementById("auth-form__email");
 var username = document.getElementById("auth-form__username");
 var password = document.getElementById("auth-form__password");
@@ -286,6 +287,7 @@ function register() {
                 email.value = "";
                 password.value = "";
                 confirmPassword.value = "";
+                console.log(form)
                 form.getElementsByClassName("error")[0].style.color = "#fff";
             }
             else if (username.value == checkUser.username) {
@@ -348,7 +350,7 @@ function logIn() {
                 window.location.href = 'http://127.0.0.1:5500/index.html';
             }
             else if (logInUsername.value == checkUser.username && logInPassword.value == checkUser.password) {
-                // location.reload();
+                location.reload();
                 hindeModalLogin();
                 localStorage.setItem("Now", logInUsername.value);
                 localStorage.setItem('sessionID', generateToken());
@@ -402,12 +404,10 @@ function logIn() {
     }
 }
 
-formRegister.addEventListener('submit', function (e) {
-    e.preventDefault();
+formRegister.addEventListener('submit', function () {
     register();
 })
-formLogin.addEventListener('submit', function (e) {
-    e.preventDefault();
+formLogin.addEventListener('submit', function () {
     logIn();
 })
 
@@ -661,13 +661,12 @@ modalContainerQuen.addEventListener("click", function (e) {
 const btnLogout = document.querySelector('.js-log-out');
 let historyLength = history.length
 function logOut() {
-    // location.reload();
+    location.reload();
     localStorage.removeItem("pageShop");
     localStorage.removeItem('sessionID');
     localStorage.removeItem('sessionUser');
     localStorage.removeItem('Now');
     localStorage.removeItem("ContentCart")
-    window.location.href = 'http://127.0.0.1:5500/index.html';
 }
 
 // for (var i = 0; i <= history.length; i++) {
@@ -1078,7 +1077,7 @@ function renderProductFilter(resultFilter) {
                 datafilter += `<div class="col col-3 col-4 col-6 col-12 mb-24">
                 <div class="popular-product-cart-wrap js-page-description-product" onclick="pageDescription()">
                     <div class="product-card-header">
-                        <img class="js-product-cart-src img-product-box" src="${item.img}"
+                        <img class="js-product-cart-src img-product-box" src=".${item.img}"
                             alt="">
                     </div>
 
