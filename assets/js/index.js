@@ -1077,7 +1077,7 @@ function renderProductFilter(resultFilter) {
                 datafilter += `<div class="col col-3 col-4 col-6 col-12 mb-24">
                 <div class="popular-product-cart-wrap js-page-description-product" onclick="pageDescription()">
                     <div class="product-card-header">
-                        <img class="js-product-cart-src img-product-box" src=".${item.img}"
+                        <img class="js-product-cart-src img-product-box" src="${item.img}"
                             alt="">
                     </div>
 
