@@ -193,9 +193,7 @@ function openPageHome() {
 }
 
 var valueProductData = localStorage.getItem('PRODUCTDATA');
-console.log(valueProductData)
 const arrProductData = JSON.parse(valueProductData);
-console.log(arrProductData)
 
 const container__loading = document.querySelector('.container__loading');
 function hide__loading() {
