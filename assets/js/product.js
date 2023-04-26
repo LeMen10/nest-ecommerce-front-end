@@ -122,8 +122,3 @@ if(localStorage.getItem("PRODUCTDATA")){
             PRODUCTDATA[i] = product_product_product[i]
     }
 }
-
-
-
-
-
