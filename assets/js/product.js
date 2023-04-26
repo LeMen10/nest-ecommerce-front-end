@@ -112,13 +112,13 @@ const PRODUCTDATA = [{
     "detail":"Sed varius fringilla lectus consequat condimentum. Aliquam turpis lorem, venenatis mauris vitae, vestibulum efficitur neque.",
 },];
 
-var json = JSON.stringify(PRODUCTDATA)
-localStorage.setItem("PRODUCTDATA", json)
+// var json = JSON.stringify(PRODUCTDATA)
+// localStorage.setItem("PRODUCTDATA", json)
 
-if(localStorage.getItem("PRODUCTDATA")){
-    var json = localStorage.getItem("PRODUCTDATA")
-    var product_product_product = JSON.parse(json)
-    for(var i = 0 ; i < product_product_product.length ; i++){
-            PRODUCTDATA[i] = product_product_product[i]
-    }
-}
+// if(localStorage.getItem("PRODUCTDATA")){
+//     var json = localStorage.getItem("PRODUCTDATA")
+//     var product_product_product = JSON.parse(json)
+//     for(var i = 0 ; i < product_product_product.length ; i++){
+//             PRODUCTDATA[i] = product_product_product[i]
+//     }
+// }

@@ -193,7 +193,9 @@ function openPageHome() {
 }
 
 var valueProductData = localStorage.getItem('PRODUCTDATA');
+console.log(valueProductData)
 const arrProductData = JSON.parse(valueProductData);
+console.log(arrProductData)
 
 const container__loading = document.querySelector('.container__loading');
 function hide__loading() {
@@ -220,7 +222,7 @@ window.onload = function () {
         username: 'admin',
         password: '12345678',
     };
-    
+
     var json = JSON.stringify(newAdmin);
     localStorage.setItem('admin', json);
     changeProducts();
